@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29keP5MhfOoUvyeijxRIxTQtTI1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danil\AppData\Local\Temp\Rar$DRa7116.16990\webapp\src\main\resources\templates" />
+      <recent name="C:\Users\danil\AppData\Local\Temp\Rar$DRa7116.16990\webapp\src\main\resources\static" />
+      <recent name="C:\Users\danil\AppData\Local\Temp\Rar$DRa7116.16990\webapp\src\main\resources\templates\fragments" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="WebappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="webapp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.webapp.WebappApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="" />
+      <created>1653661484043</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653661484043</updated>
+      <workItem from="1653661485383" duration="3299000" />
+      <workItem from="1654055344005" duration="77000" />
+      <workItem from="1654058612480" duration="44000" />
+      <workItem from="1654058681550" duration="378000" />
+      <workItem from="1654061849436" duration="14000" />
+      <workItem from="1654062094729" duration="6000" />
+      <workItem from="1654062345575" duration="8000" />
+      <workItem from="1654070796550" duration="606000" />
+      <workItem from="1654222866449" duration="1910000" />
+      <workItem from="1654227505561" duration="5000" />
+      <workItem from="1654232687211" duration="21000" />
+      <workItem from="1654241861010" duration="2307000" />
+      <workItem from="1654251207470" duration="1169000" />
+      <workItem from="1654289008069" duration="36000" />
+      <workItem from="1654326981406" duration="7000" />
+      <workItem from="1654327104159" duration="31000" />
+      <workItem from="1654331477371" duration="12000" />
+      <workItem from="1654413775218" duration="2488000" />
+      <workItem from="1654416377121" duration="18523000" />
+      <workItem from="1654453714460" duration="2011000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

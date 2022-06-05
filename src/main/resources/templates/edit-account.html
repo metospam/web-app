@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <title>melaside</title>
+</head>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+    <h2 class="w3-wide">Fill The Form</h2>
+
+    <div class="forms">
+
+        <form method="post" th:object="${accountDto}">
+                <label for="inputUsername">Enter Nickname</label>
+            <div>
+                    <input type="text" class="w3-border-black" id="inputUsername" th:field="*{username}">
+                    <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Not valid</span>
+            </div>
+
+            <label for="inputLogin">Enter Login</label>
+            <div>
+            <input type="text" class="w3-border-black" id="inputLogin" th:field="*{login}">
+            <span th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Not Valid</span>
+            </div>
+
+            <label for="inputPassword">Enter Password</label>
+            <div>
+            <input type="text" class="w3-border-black" id="inputPassword" th:field="*{password}">
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Not Valid</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+    </div>
+</section>
+
+<footer th:insert="fragments/footer :: footer"></footer>
+
+</body>
+</html>
