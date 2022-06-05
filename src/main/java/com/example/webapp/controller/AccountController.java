@@ -1,7 +1,6 @@
 package com.example.webapp.controller;
 
-import com.example.webapp.exception.ContactNotFoundException;
-import com.example.webapp.model.Account;
+import com.example.webapp.exception.UserNotFoundException;
 import com.example.webapp.model.dto.AccountDto;
 import com.example.webapp.service.AccountService;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +34,7 @@ public class AccountController {
 
     @GetMapping("/{id}")
     public String editAccount(@PathVariable("id") Long id, Model model){
-        AccountDto dto = accountService.findById(id).orElseThrow(() -> new ContactNotFoundException(id));
+        AccountDto dto = accountService.findById(id).orElseThrow(() -> new UserNotFoundException(id));
         model.addAttribute("accountDto", dto);
 
         return "edit-account";
