@@ -28,6 +28,11 @@ public class AccountController {
         return "account";
     }
 
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
     @GetMapping("/{id}")
     public String editAccount(@PathVariable("id") Long id, Model model){
         AccountDto dto = accountService.findById(id).orElseThrow(() -> new ContactNotFoundException(id));
