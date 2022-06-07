@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <head>
     <title>melaside</title>
 </head>
@@ -17,16 +17,14 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Username</th>
-                <th scope="col">Login</th>
                 <th scope="col">Password</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="account : ${list}">
+            <tr th:each="user : ${list}">
                 <td>&nbsp;</td>
-                <td th:text="${account.username}">random</td>
-                <td th:text="${account.login}">data</td>
-                <td th:text="${account.password}">placeholder</td>
+                <td th:text="${user.username}">random</td>
+                <td th:text="${user.password}">placeholder</td>
             </tr>
 
             </tbody>

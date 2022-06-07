@@ -1,7 +1,7 @@
 package com.example.webapp.controller;
 
-import com.example.webapp.model.dto.AccountDto;
-import com.example.webapp.service.AccountService;
+import com.example.webapp.model.dto.UserDto;
+import com.example.webapp.service.impl.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,11 +15,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UsersController {
 
-    private final AccountService accountService;
+    private final UserService userService;
 
     @GetMapping
     public String index(Model model){
-        List<AccountDto> list = accountService.findAll();
+        List<UserDto> list = userService.findAll();
         model.addAttribute("list", list);
 
         return "users";

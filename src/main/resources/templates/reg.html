@@ -14,17 +14,11 @@
 
     <div class="forms">
 
-        <form method="post" th:object="${accountDto}">
+        <form method="post" th:object="${userDto}">
                 <label for="inputUsername">Enter Nickname</label>
             <div>
                     <input type="text" class="w3-border-black" id="inputUsername" th:field="*{username}">
                     <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Not valid</span>
-            </div>
-
-            <label for="inputLogin">Enter Login</label>
-            <div>
-            <input type="text" class="w3-border-black" id="inputLogin" th:field="*{login}">
-            <span th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Not Valid</span>
             </div>
 
             <label for="inputPassword">Enter Password</label>
