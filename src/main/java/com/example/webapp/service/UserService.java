@@ -1,4 +1,4 @@
-package com.example.webapp.service.impl;
+package com.example.webapp.service;
 
 import com.example.webapp.model.dto.UserDto;
 import org.springframework.security.core.userdetails.UserDetailsService;

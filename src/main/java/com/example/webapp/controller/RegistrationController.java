@@ -1,7 +1,7 @@
 package com.example.webapp.controller;
 
 import com.example.webapp.model.dto.UserDto;
-import com.example.webapp.service.impl.UserService;
+import com.example.webapp.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

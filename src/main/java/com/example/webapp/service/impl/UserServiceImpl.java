@@ -4,6 +4,7 @@ import com.example.webapp.model.Role;
 import com.example.webapp.model.User;
 import com.example.webapp.model.dto.UserDto;
 import com.example.webapp.repository.UserRepo;
+import com.example.webapp.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.util.Streamable;
