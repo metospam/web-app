@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -10,16 +10,12 @@
 <header th:replace="fragments/header :: header"></header>
 
 <section class="w3-container w3-center w3-content" style="max-width:600px">
-    <h2 class="w3-wide">Search Product</h2>
-</section>
+    <h2 class="w3-wide">All Users</h2>
+    <div>
+        <h2 th:text="${#authentication.name}"></h2>
+    </div>
 
-<section class="w3-container w3-center w3-content" style="max-width:600px">
-<p>
-    <input type="search" placeholder="Enter here...">
-    <input type="submit" class="w3-button" value="Search">
-</p>
-
-
+    <div><h2>TEST</h2></div>
 </section>
 
 <footer th:insert="fragments/footer :: footer"></footer>

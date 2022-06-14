@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
@@ -7,13 +7,20 @@
 </head>
 
 <header class="w3-animate-top w3-bar w3-black">
-<nav class="w3-bar w3-black">
+    <nav sec:authorize="${!isAuthenticated()}" class="w3-bar w3-black">
     <a href="/" class="w3-button w3-bar-item">Home</a>
     <a href="/store" class="w3-button w3-bar-item">Store</a>
-    <a href="/users" class="w3-button w3-bar-item">Users</a>
+    <a href="/404" class="w3-button w3-bar-item">Users</a>
     <a href="/404" class="w3-button w3-bar-item">About Us</a>
-    <a href="story.html" class="w3-button w3-bar-item">My Account</a>
 </nav>
+
+    <nav sec:authorize="${isAuthenticated()}" class="w3-bar w3-black">
+        <a href="/" class="w3-button w3-bar-item">Home</a>
+        <a href="/store" class="w3-button w3-bar-item">Store</a>
+        <a href="/404" class="w3-button w3-bar-item">Users</a>
+        <a href="/404" class="w3-button w3-bar-item">About Us</a>
+        <a th:href="@{/user/{id}(id=${#authentication.getPrincipal().id})}" class="w3-button w3-bar-item">My Account</a>
+    </nav>
 </header>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -10,14 +10,40 @@
 
 <header th:replace="fragments/header :: header"></header>
 
-<section class="w3-container w3-center w3-content" style="max-width:600px">
-    <h2 class="w3-wide">Home Page</h2>
-    <p class="w3-justify"></p>
-    <h3> <a href="/login" class="w3-button">Authorization</a></h3>
-    <h3> <a href="/reg" class="w3-button">new Account</a></h3>
-</section>
+<div sec:authorize="${!isAuthenticated()}">
+    <section class="w3-container w3-center w3-content" style="max-width:600px">
+        <h2 class="w3-wide">Home Page</h2>
+        <p class="w3-justify"></p>
+        <h3> <a href="/login" class="w3-button">Authorization</a></h3>
+        <h3> <a href="/user/registration" class="w3-button">new Account</a></h3>
+    </section>
+</div>
+
+<div sec:authorize="${isAuthenticated()}">
+    <section class="w3-container w3-center w3-content" style="max-width:600px">
+        <h2 class="w3-wide">Home Page</h2>
+        <h3 id="greetings"></h3>
+        <h3 th:text="${#authentication.name}"></h3>
+        <h3> <a href="/logout" class="w3-button">Logout</a></h3>
+    </section>
+</div>
 
 <footer th:insert="fragments/footer :: footer"></footer>
 
 </body>
+<script>
+    var data = [
+            [0, 4, "Good night,"],
+            [5, 11, "Good morning,"],
+            [12, 17, "Good afternoon,"],
+            [18, 24, "Good Evening,"]
+        ],
+        hr = new Date().getHours();
+
+    for(var i = 0; i < data.length; i++){
+        if(hr >= data[i][0] && hr <= data[i][1]){
+            document.getElementById("greetings").innerHTML = data[i][2];
+        }
+    }
+</script>
 </html>

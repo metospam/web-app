@@ -20,7 +20,9 @@ public class Role {
     @Column(name = "name")
     private String name;
 
-    public Role(Long id) {
+    public Role(Long id, String name){
         this.id = id;
+        this.name = name;
     }
+
 }

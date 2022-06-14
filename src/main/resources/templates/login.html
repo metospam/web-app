@@ -17,8 +17,11 @@
         You have been logged out.
     </div>
     <form th:action="@{/login}" method="post">
-        <div><label> Username : <input type="text" name="username"/> </label></div>
-        <div><label> Password: <input type="password" name="password"/> </label></div>
+        <label for="username"> Username </label>
+        <div><input type="text" class="w3-border-black" id="username" name="username"/></div>
+
+        <label for="password"> Password </label>
+        <div><input type="password" class="w3-border-black" id="password" name="password"/></div>
         <div><input type="submit" value="Sign In"/></div>
     </form>
 </section>

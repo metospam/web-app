@@ -1,5 +1,6 @@
 package com.example.webapp.service.impl;
 
+import com.example.webapp.model.MyUser;
 import com.example.webapp.model.Role;
 import com.example.webapp.model.User;
 import com.example.webapp.model.dto.UserDto;
@@ -38,7 +39,8 @@ public class UserServiceImpl implements UserService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> currentUser =  userRepo.findByUsername(username);
 
-        return currentUser.map(user -> new org.springframework.security.core.userdetails.User(
+        return currentUser.map(user -> new MyUser(
+                user.getId(),
                 user.getUsername(),
                 user.getPassword(),
                         createAuthorities(user.getRoles())
@@ -56,12 +58,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional
-    public void save(UserDto dto) {
-        User user = new User();
-        user.setUsername(dto.getUsername());
-        user.setPassword(encoder.encode(dto.getPassword()));
+    public Long save(UserDto dto) {
+            User user = new User();
+            user.setUsername(dto.getUsername());
+            user.setPassword(encoder.encode(dto.getPassword()));
+            user.setRoles(Collections.singletonList(new Role(2L, "ROLE_USER")));
 
-        userRepo.save(user);
+            userRepo.save(user);
+
+            return user.getId();
     }
 
     private List<? extends GrantedAuthority> createAuthorities(List<Role> roles){
@@ -75,4 +80,5 @@ public class UserServiceImpl implements UserService {
     public UserDto map(User user){
         return modelMapper.map(user, UserDto.class);
     }
+
 }

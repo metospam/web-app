@@ -4,7 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="add Spring UserDetailService, BCrypt." />
+    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="Create package impl, moved UserService.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_flywaydb_flyway_core_8_5_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_springsecurity5_3_0_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/UserAdviceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/exception/UserAlreadyExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/MyUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/dto/BookDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/repository/BookRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/validator/PasswordMatches.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/validator/PasswordMatchesValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__initial.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__create_test_table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/usernotfound.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/RegistrationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/UsersController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/store.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +51,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -54,7 +91,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="discord-application" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -104,6 +141,26 @@
       <workItem from="1654585273619" duration="4892000" />
       <workItem from="1654604873597" duration="2587000" />
       <workItem from="1654609521573" duration="7820000" />
+      <workItem from="1654621497192" duration="428000" />
+      <workItem from="1654634149745" duration="44000" />
+      <workItem from="1654844095083" duration="190000" />
+      <workItem from="1654870987250" duration="453000" />
+      <workItem from="1654873964676" duration="222000" />
+      <workItem from="1654874621233" duration="25000" />
+      <workItem from="1654890352955" duration="12000" />
+      <workItem from="1654890802598" duration="61000" />
+      <workItem from="1654890977090" duration="99000" />
+      <workItem from="1654891228747" duration="563000" />
+      <workItem from="1655031107843" duration="732000" />
+      <workItem from="1655032334492" duration="242000" />
+      <workItem from="1655033049902" duration="12000" />
+      <workItem from="1655046675990" duration="2789000" />
+      <workItem from="1655109142789" duration="856000" />
+      <workItem from="1655113502515" duration="2805000" />
+      <workItem from="1655116361654" duration="1923000" />
+      <workItem from="1655118334309" duration="10473000" />
+      <workItem from="1655155962155" duration="486000" />
+      <workItem from="1655215839844" duration="10575000" />
     </task>
     <task id="LOCAL-00001" summary="add Spring UserDetailService, BCrypt.">
       <created>1654617260642</created>
@@ -112,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654617260642</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create package impl, moved UserService.">
+      <created>1654621623540</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654621623540</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +195,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Spring UserDetailService, BCrypt." />
-    <option name="LAST_COMMIT_MESSAGE" value="add Spring UserDetailService, BCrypt." />
+    <MESSAGE value="Create package impl, moved UserService." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create package impl, moved UserService." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

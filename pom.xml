@@ -6,13 +6,13 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>ru.levelup</groupId>
-    <artifactId>my-crm</artifactId>
+    <artifactId>web-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>my-crm</name>
-    <description>my-crm</description>
+    <name>web-app</name>
+    <description>web-app</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -60,6 +60,15 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+        </dependency>
 
     </dependencies>
 
