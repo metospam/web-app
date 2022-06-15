@@ -37,14 +37,14 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> currentUser =  userRepo.findByUsername(username);
+        Optional<User> currentUser = userRepo.findByUsername(username);
 
         return currentUser.map(user -> new MyUser(
                 user.getId(),
                 user.getUsername(),
                 user.getPassword(),
-                        createAuthorities(user.getRoles())
-                )).orElseThrow(() -> new UsernameNotFoundException(username));
+                createAuthorities(user.getRoles())
+        )).orElseThrow(() -> new UsernameNotFoundException(username));
     }
 
     @Override
@@ -59,17 +59,17 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     public Long save(UserDto dto) {
-            User user = new User();
-            user.setUsername(dto.getUsername());
-            user.setPassword(encoder.encode(dto.getPassword()));
-            user.setRoles(Collections.singletonList(new Role(2L, "ROLE_USER")));
+        User user = new User();
+        user.setUsername(dto.getUsername());
+        user.setPassword(encoder.encode(dto.getPassword()));
+        user.setRoles(Collections.singletonList(new Role(2L, "ROLE_USER")));
 
-            userRepo.save(user);
+        userRepo.save(user);
 
-            return user.getId();
+        return user.getId();
     }
 
-    private List<? extends GrantedAuthority> createAuthorities(List<Role> roles){
+    private List<? extends GrantedAuthority> createAuthorities(List<Role> roles) {
         return ofNullable(roles)
                 .map(roleList -> roleList.stream().map(role -> new SimpleGrantedAuthority(role.getName())).
                         collect(Collectors.toList())
@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
                 .orElse(Collections.emptyList());
     }
 
-    public UserDto map(User user){
+    public UserDto map(User user) {
         return modelMapper.map(user, UserDto.class);
     }
 

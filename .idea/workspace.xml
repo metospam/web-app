@@ -4,43 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="Create package impl, moved UserService.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_flywaydb_flyway_core_8_5_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_springsecurity5_3_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/UserAdviceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/exception/UserAlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/MyUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/dto/BookDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/repository/BookRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/validator/PasswordMatches.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/validator/PasswordMatchesValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__initial.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__create_test_table.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/usernotfound.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" afterDir="false" />
+    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="Add flyway, thymeleaf extras">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/BookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/book-form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/RegistrationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/UsersController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/StoreController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/store.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +133,12 @@
       <workItem from="1655116361654" duration="1923000" />
       <workItem from="1655118334309" duration="10473000" />
       <workItem from="1655155962155" duration="486000" />
-      <workItem from="1655215839844" duration="10575000" />
+      <workItem from="1655215839844" duration="11167000" />
+      <workItem from="1655227262872" duration="248000" />
+      <workItem from="1655227545832" duration="56000" />
+      <workItem from="1655236648998" duration="133000" />
+      <workItem from="1655282426911" duration="887000" />
+      <workItem from="1655283357735" duration="1532000" />
     </task>
     <task id="LOCAL-00001" summary="add Spring UserDetailService, BCrypt.">
       <created>1654617260642</created>
@@ -176,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654621623540</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add flyway, thymeleaf extras">
+      <created>1655226863402</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655226863403</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +181,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add Spring UserDetailService, BCrypt." />
     <MESSAGE value="Create package impl, moved UserService." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create package impl, moved UserService." />
+    <MESSAGE value="Add flyway, thymeleaf extras" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add flyway, thymeleaf extras" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
