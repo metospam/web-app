@@ -42,7 +42,7 @@ public class UserController {
 
     @GetMapping("/registration")
     public String newUser(UserDto userDto) {
-        return "registration";
+        return "user-form";
     }
 
     @PostMapping("/registration")
@@ -50,8 +50,8 @@ public class UserController {
         if(bindingResult.hasErrors()){
             return "user-form";
         }
-        long id = userService.save(userDto);
-        return "redirect:/user/" + id;
+        userService.save(userDto);
+        return "redirect:/login";
     }
 
 }
