@@ -27,15 +27,16 @@ public class UserController {
     @GetMapping("/{id}")
     public String editContact(@PathVariable("id") Long id, Model model) {
         User user = userRepo.findById(id).orElseThrow(() -> new UserNotFoundException(id));
-        String username = user.getUsername();
         model.addAttribute("user", user);
-        model.addAttribute("username", username);
+        if(user.getBooks() != null) {
+            model.addAttribute("books", user.getBooks());
+        }
 
         return "edit-user";
     }
 
     @PostMapping("/{id}")
-    public String updateContact() {
+    public String updateUser() {
         return "edit-user";
     }
 
@@ -47,7 +48,7 @@ public class UserController {
     @PostMapping("/registration")
     public String createAccount(@Valid UserDto userDto, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            return "registration";
+            return "user-form";
         }
         long id = userService.save(userDto);
         return "redirect:/user/" + id;

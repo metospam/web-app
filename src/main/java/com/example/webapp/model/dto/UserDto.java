@@ -6,8 +6,8 @@ import lombok.Data;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 
-@PasswordMatches
 @Data
+@PasswordMatches
 public class UserDto {
 
     @NotBlank

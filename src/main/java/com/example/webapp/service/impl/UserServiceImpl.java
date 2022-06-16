@@ -1,5 +1,6 @@
 package com.example.webapp.service.impl;
 
+import com.example.webapp.model.Book;
 import com.example.webapp.model.MyUser;
 import com.example.webapp.model.Role;
 import com.example.webapp.model.User;
@@ -43,6 +44,7 @@ public class UserServiceImpl implements UserService {
                 user.getId(),
                 user.getUsername(),
                 user.getPassword(),
+                user.getBooks(),
                 createAuthorities(user.getRoles())
         )).orElseThrow(() -> new UsernameNotFoundException(username));
     }
@@ -75,6 +77,13 @@ public class UserServiceImpl implements UserService {
                         collect(Collectors.toList())
                 )
                 .orElse(Collections.emptyList());
+    }
+
+    @Override
+    public void addBook(User user, Book book){
+        user.getBooks().add(book);
+
+        userRepo.save(user);
     }
 
     public UserDto map(User user) {

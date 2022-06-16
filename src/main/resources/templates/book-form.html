@@ -10,27 +10,21 @@
 <header th:replace="fragments/header :: header"></header>
 
 <section class="w3-container w3-center w3-content" style="max-width:600px">
-    <h2 class="w3-wide">Fill The Form</h2>
+    <h2 class="w3-wide">BOOK FORM</h2>
 
     <div class="forms">
 
         <form method="post" th:object="${bookDto}">
-            <label for="username">Enter Nickname</label>
+            <label for="title">Enter Title</label>
             <div>
-                <input type="text" class="w3-border-black" id="username" th:field="*{username}">
-                <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Not valid</span>
+                <input type="text" class="w3-border-black" id="title" th:field="*{title}">
+                <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Not valid</span>
             </div>
 
-            <label for="password">Enter Password</label>
+            <label for="description">Enter Description</label>
             <div>
-                <input type="text" class="w3-border-black" id=password th:field="*{password}">
-                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Not Valid</span>
-            </div>
-
-            <label for="matchingPassword">Enter Password</label>
-            <div>
-                <input type="text" class="w3-border-black" id=matchingPassword th:field="*{matchingPassword}">
-                <span th:if="${#fields.hasErrors('matchingPassword')}" th:errors="*{matchingPassword}">Not Valid</span>
+                <input type="text" class="w3-border-black" id=description th:field="*{description}">
+                <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Not Valid</span>
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>

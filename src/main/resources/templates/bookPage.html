@@ -9,24 +9,19 @@
 
 <header th:replace="fragments/header :: header"></header>
 
-<section class="w3-container w3-center w3-content" style="max-width:600px">
-    <h2 class="w3-wide">Search Product</h2>
-</section>
 
 <section class="w3-container w3-center w3-content" style="max-width:600px">
-<p>
-    <input type="search" placeholder="Enter here...">
-    <input type="submit" class="w3-button" value="Search">
-</p>
-
-    <div sec:authorize="hasAuthority('ROLE_ADMIN')">
-        <a class="w3-button" href="/book/new">Add book</a>
-        <a class="w3-button" href="/book/author/new">Add Author</a>
+    <h2 class="w3-wide">Book Page</h2>
+    <div th:object="${book}">
+        <h3 th:text="${book.title}"></h3>
+        <h4 th:text="${book.description}"></h4>
+        <a th:href="@{/book/subscribe/{id}(id=${book.id})}" class="w3-button">Sub</a>
     </div>
-
-
 </section>
 
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+
+</section>
 
 <footer th:insert="fragments/footer :: footer"></footer>
 

@@ -10,7 +10,7 @@
 <header th:replace="fragments/header :: header"></header>
 
 <section class="w3-container w3-center w3-content" style="max-width:600px">
-    <h2 class="w3-wide">Fill The Form</h2>
+    <h2 class="w3-wide">USER FORM</h2>
 
     <div class="forms">
 
@@ -27,7 +27,7 @@
                 <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Not Valid</span>
             </div>
 
-            <label for="matchingPassword">Enter Password</label>
+            <label for="matchingPassword">Confirm Password</label>
             <div>
                 <input type="text" class="w3-border-black" id=matchingPassword th:field="*{matchingPassword}">
                 <span th:if="${#fields.hasErrors('matchingPassword')}" th:errors="*{matchingPassword}">Not Valid</span>

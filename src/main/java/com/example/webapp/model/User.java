@@ -31,4 +31,13 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "role_id")}
     )
     private List<Role> roles;
+
+    @ManyToMany
+    @JoinTable(
+            name = "books_users",
+            schema = "edu_schema",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "book_id")}
+    )
+    private List<Book> books;
 }
