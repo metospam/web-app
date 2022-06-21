@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="More books">
+    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="UserController bug fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/MyUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/MyUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +140,15 @@
       <workItem from="1655283357735" duration="1532000" />
       <workItem from="1655331798080" duration="44000" />
       <workItem from="1655373973634" duration="8177000" />
-      <workItem from="1655382253103" duration="291000" />
+      <workItem from="1655382253103" duration="328000" />
+      <workItem from="1655399887368" duration="12000" />
+      <workItem from="1655399974848" duration="59000" />
+      <workItem from="1655404238149" duration="14000" />
+      <workItem from="1655647402348" duration="68000" />
+      <workItem from="1655743882638" duration="2224000" />
+      <workItem from="1655747366863" duration="192000" />
+      <workItem from="1655814539979" duration="6335000" />
+      <workItem from="1655824122034" duration="2685000" />
     </task>
     <task id="LOCAL-00001" summary="add Spring UserDetailService, BCrypt.">
       <created>1654617260642</created>
@@ -164,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655382177497</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="UserController bug fix">
+      <created>1655382556648</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655382556648</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +207,8 @@
     <MESSAGE value="Create package impl, moved UserService." />
     <MESSAGE value="Add flyway, thymeleaf extras" />
     <MESSAGE value="More books" />
-    <option name="LAST_COMMIT_MESSAGE" value="More books" />
+    <MESSAGE value="UserController bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserController bug fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

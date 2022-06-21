@@ -1,6 +1,7 @@
 package com.example.webapp.service;
 
 import com.example.webapp.model.Book;
+import com.example.webapp.model.MyUser;
 import com.example.webapp.model.User;
 import com.example.webapp.model.dto.UserDto;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -16,5 +17,7 @@ public interface UserService extends UserDetailsService {
     Long save(UserDto dto);
 
     void addBook(User user, Book book);
+
+    void removeBook(User user, Book book);
 }
 

@@ -32,7 +32,7 @@ public class User {
     )
     private List<Role> roles;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "books_users",
             schema = "edu_schema",

@@ -30,9 +30,7 @@ import static java.util.Optional.ofNullable;
 public class UserServiceImpl implements UserService {
 
     private final UserRepo userRepo;
-
     private final ModelMapper modelMapper;
-
     private final PasswordEncoder encoder;
 
     @Override
@@ -82,6 +80,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addBook(User user, Book book){
         user.getBooks().add(book);
+
+        userRepo.save(user);
+    }
+
+    @Override
+    public void removeBook(User user, Book book) {
+        user.getBooks().remove(book);
 
         userRepo.save(user);
     }
