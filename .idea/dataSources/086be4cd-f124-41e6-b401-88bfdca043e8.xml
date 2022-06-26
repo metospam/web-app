@@ -3,17 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.32">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <Grants>1||-9223372036854775808|c|G
-1||10|c|G
-1||10|C|G
-1||10|T|G
-13753||-9223372036854775808|c|G
-13753||10|c|G
-13753||10|C|G
-13753||10|T|G</Grants>
-      <IntrospectionStateNumber>1469</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1578</IntrospectionStateNumber>
       <ServerVersion>14.2</ServerVersion>
-      <StartupTime>1655345739</StartupTime>
+      <StartupTime>1655974406</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -809,18 +801,18 @@ false Zulu
 13388||10|C|G
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
-      <IntrospectionStateNumber>1470</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1579</IntrospectionStateNumber>
       <ObjectId>13754</ObjectId>
       <Relations>sequence|table|16699|16700|1
 sequence|table|16706|16707|1
 sequence|table|16718|16719|1
 sequence|table|16806|16807|1
 sequence|table|16839|16840|1
-sequence|table|16861|16858|1
 sequence|table|16912|16913|1
 sequence|table|16968|16969|1
 sequence|table|16977|16978|1
 sequence|table|17009|17010|1
+sequence|table|17046|17047|1
 </Relations>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4236,7 +4228,7 @@ sequence|table|17009|17010|1
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
     <schema id="260" parent="2" name="edu_schema">
-      <IntrospectionStateNumber>1470</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1579</IntrospectionStateNumber>
       <ObjectId>16736</ObjectId>
       <StateNumber>1034</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4282,10 +4274,10 @@ sequence|table|17009|17010|1
       <StateNumber>1176</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="268" parent="260" name="genres_genre_id_seq">
+    <sequence id="268" parent="260" name="genres_id_seq">
       <DataType>bigint|0s</DataType>
-      <ObjectId>16861</ObjectId>
-      <StateNumber>1185</StateNumber>
+      <ObjectId>17046</ObjectId>
+      <StateNumber>1571</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="269" parent="260" name="roles_id_seq">
@@ -4325,8 +4317,8 @@ sequence|table|17009|17010|1
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="275" parent="260" name="books_genres">
-      <ObjectId>16870</ObjectId>
-      <StateNumber>1191</StateNumber>
+      <ObjectId>17055</ObjectId>
+      <StateNumber>1575</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4343,8 +4335,8 @@ sequence|table|17009|17010|1
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="278" parent="260" name="genres">
-      <ObjectId>16858</ObjectId>
-      <StateNumber>1191</StateNumber>
+      <ObjectId>17047</ObjectId>
+      <StateNumber>1575</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4553,34 +4545,34 @@ author_id</ColNames>
     <column id="308" parent="275" name="book_id">
       <DataType>bigint|0s</DataType>
       <Position>1</Position>
-      <StateNumber>1191</StateNumber>
+      <StateNumber>1575</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="309" parent="275" name="genre_id">
       <DataType>bigint|0s</DataType>
       <Position>2</Position>
-      <StateNumber>1191</StateNumber>
+      <StateNumber>1575</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="310" parent="275" name="books_genres_books_book_id_fk">
+    <foreign-key id="310" parent="275" name="books_genres_books_id_fk">
       <ColNames>book_id</ColNames>
-      <ObjectId>16873</ObjectId>
+      <ObjectId>17058</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
       <RefKeyName>books_pk</RefKeyName>
-      <StateNumber>1191</StateNumber>
+      <StateNumber>1575</StateNumber>
       <RefTableId>16807</RefTableId>
       <RefTableName>books</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="311" parent="275" name="books_genres_genres_genre_id_fk">
+    <foreign-key id="311" parent="275" name="books_genres_genres_id_fk">
       <ColNames>genre_id</ColNames>
-      <ObjectId>16878</ObjectId>
-      <RefColNames>genre_id</RefColNames>
+      <ObjectId>17063</ObjectId>
+      <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
       <RefKeyName>genres_pk</RefKeyName>
-      <StateNumber>1191</StateNumber>
-      <RefTableId>16858</RefTableId>
+      <StateNumber>1575</StateNumber>
+      <RefTableId>17047</RefTableId>
       <RefTableName>genres</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
@@ -4589,8 +4581,8 @@ author_id</ColNames>
       <ColNames>book_id
 genre_id</ColNames>
       <CollationIds>0,0</CollationIds>
-      <ObjectId>16883</ObjectId>
-      <StateNumber>1192</StateNumber>
+      <ObjectId>17068</ObjectId>
+      <StateNumber>1576</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
@@ -4704,36 +4696,36 @@ user_id</ColNames>
       <StateNumber>1176</StateNumber>
       <UnderlyingIndexId>16846</UnderlyingIndexId>
     </key>
-    <column id="327" parent="278" name="genre_id">
+    <column id="327" parent="278" name="id">
       <DataType>bigint|0s</DataType>
-      <DefaultExpression>nextval(&apos;edu_schema.genres_genre_id_seq&apos;::regclass)</DefaultExpression>
+      <DefaultExpression>nextval(&apos;edu_schema.genres_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1185</StateNumber>
+      <StateNumber>1571</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="328" parent="278" name="genrename">
+    <column id="328" parent="278" name="name">
       <DataType>varchar|0s</DataType>
       <Position>2</Position>
-      <StateNumber>1291</StateNumber>
+      <StateNumber>1571</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="329" parent="278" name="genres_pk">
       <ClassIds>3124</ClassIds>
-      <ColNames>genre_id</ColNames>
+      <ColNames>id</ColNames>
       <CollationIds>0</CollationIds>
-      <ObjectId>16868</ObjectId>
+      <ObjectId>17053</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1187</StateNumber>
+      <StateNumber>1571</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="330" parent="278" name="genres_pk">
-      <ColNames>genre_id</ColNames>
-      <ObjectId>16869</ObjectId>
+      <ColNames>id</ColNames>
+      <ObjectId>17054</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1187</StateNumber>
-      <UnderlyingIndexId>16868</UnderlyingIndexId>
+      <StateNumber>1571</StateNumber>
+      <UnderlyingIndexId>17053</UnderlyingIndexId>
     </key>
     <column id="331" parent="279" name="id">
       <DataType>bigint|0s</DataType>

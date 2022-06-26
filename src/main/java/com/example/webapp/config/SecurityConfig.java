@@ -20,7 +20,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
-                .antMatchers("/store/book/new").hasRole("ADMIN");
+                .antMatchers("/store/book/new").hasRole("ADMIN")
+                .antMatchers("/store/author/new").hasRole("ADMIN");
     }
 
     @Bean

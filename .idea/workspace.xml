@@ -4,15 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="UserController bug fix">
+    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="Sub Action">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/books.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/MyUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/MyUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/Genre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/repository/BookRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/repository/BookRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/BookServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/webapp/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPageAuth.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/store.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -149,6 +160,15 @@
       <workItem from="1655747366863" duration="192000" />
       <workItem from="1655814539979" duration="6335000" />
       <workItem from="1655824122034" duration="2685000" />
+      <workItem from="1655831512241" duration="56000" />
+      <workItem from="1655837795112" duration="7829000" />
+      <workItem from="1655872979231" duration="3901000" />
+      <workItem from="1655920816180" duration="1476000" />
+      <workItem from="1655925009596" duration="3614000" />
+      <workItem from="1656112367528" duration="5647000" />
+      <workItem from="1656175784023" duration="3839000" />
+      <workItem from="1656179953429" duration="5300000" />
+      <workItem from="1656197470696" duration="1243000" />
     </task>
     <task id="LOCAL-00001" summary="add Spring UserDetailService, BCrypt.">
       <created>1654617260642</created>
@@ -185,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655382556648</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Sub Action">
+      <created>1655831550285</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655831550285</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +235,8 @@
     <MESSAGE value="Add flyway, thymeleaf extras" />
     <MESSAGE value="More books" />
     <MESSAGE value="UserController bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserController bug fix" />
+    <MESSAGE value="Sub Action" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sub Action" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

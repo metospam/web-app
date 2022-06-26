@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <title>melaside</title>
+</head>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+    <h2 class="w3-wide">Search Product</h2>
+</section>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+
+    <div sec:authorize="hasAuthority('ROLE_ADMIN')">
+        <a class="w3-button" href="/book/new">Add book</a>
+        <a class="w3-button" href="/book/author/new">Add Author</a>
+    </div>
+
+    <h2>BOOKS</h2>
+    <form action="/book">
+        <input name="keyword" id="keyword" size="50" th:value="${keyword}" required/>
+        <input type="submit" value="Search"/>
+    </form>
+
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"></td>
+            <td>
+            <a class="w3-button" th:text="${book.title}" th:href="@{/book/{id}(id=${book.id})}"></a>
+            </td>
+            <td th:each="genre : ${book.genres}" th:text="${genre.name}"></td>
+            <td>
+                <a th:href="@{book/delete/{id}(id=${book.id})}">Delete</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</section>
+
+
+<footer th:insert="fragments/footer :: footer"></footer>
+
+</body>
+
+</html>

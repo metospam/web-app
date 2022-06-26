@@ -1,6 +1,5 @@
 package com.example.webapp.service.impl;
 
-import com.example.webapp.model.Book;
 import com.example.webapp.model.MyUser;
 import com.example.webapp.model.Role;
 import com.example.webapp.model.User;
@@ -8,8 +7,6 @@ import com.example.webapp.model.dto.UserDto;
 import com.example.webapp.repository.UserRepo;
 import com.example.webapp.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
-import org.springframework.data.util.Streamable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -30,7 +27,6 @@ import static java.util.Optional.ofNullable;
 public class UserServiceImpl implements UserService {
 
     private final UserRepo userRepo;
-    private final ModelMapper modelMapper;
     private final PasswordEncoder encoder;
 
     @Override
@@ -45,16 +41,6 @@ public class UserServiceImpl implements UserService {
                 user.getBooks(),
                 createAuthorities(user.getRoles())
         )).orElseThrow(() -> new UsernameNotFoundException(username));
-    }
-
-    @Override
-    public Optional<UserDto> findById(Long id) {
-        return userRepo.findById(id).map(this::map);
-    }
-
-    @Override
-    public List<UserDto> findAll() {
-        return Streamable.of(userRepo.findAll()).map(this::map).toList();
     }
 
     @Transactional
@@ -75,24 +61,6 @@ public class UserServiceImpl implements UserService {
                         collect(Collectors.toList())
                 )
                 .orElse(Collections.emptyList());
-    }
-
-    @Override
-    public void addBook(User user, Book book){
-        user.getBooks().add(book);
-
-        userRepo.save(user);
-    }
-
-    @Override
-    public void removeBook(User user, Book book) {
-        user.getBooks().remove(book);
-
-        userRepo.save(user);
-    }
-
-    public UserDto map(User user) {
-        return modelMapper.map(user, UserDto.class);
     }
 
 }

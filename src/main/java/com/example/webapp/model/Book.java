@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "books", schema = "edu_schema")
@@ -22,4 +23,23 @@ public class Book {
 
     @Column(name = "description")
     private String description;
+
+    @ManyToOne
+    @JoinTable(
+            name = "books_users",
+            schema = "edu_schema",
+            joinColumns = {@JoinColumn(name = "book_id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_id")}
+    )
+    private User user;
+
+    @ManyToMany
+    @JoinTable(
+            name = "books_genres",
+            schema = "edu_schema",
+            joinColumns = {@JoinColumn(name = "book_id")},
+            inverseJoinColumns = {@JoinColumn(name = "genre_id")}
+    )
+    private List<Genre> genres;
+
 }

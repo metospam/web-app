@@ -11,11 +11,12 @@ import javax.persistence.*;
 @Getter @Setter
 @NoArgsConstructor
 public class Genre {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "genres_genre_id_seq")
     @SequenceGenerator(name = "genres_genre_id_seq", schema = "edu_schema", allocationSize = 1)
     private Long id;
 
-    @Column(name = "genrename")
-    private String genrename;
+    @Column(name = "name")
+    private String name;
 }
