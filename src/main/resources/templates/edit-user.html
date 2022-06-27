@@ -22,24 +22,14 @@
     <div th:each="book : ${books}">
         <a class="w3-button" th:text="${book.title}" th:href="@{/book/{id}(id=${book.id})}"></a>
     </div>
-    <form method="post" enctype="multipart/form-data" th:action="@{/user/{id}(id=${id})}">
-        <table>
-            <h3>User's Avatar:</h3>
-            <input type="file" name="file" />
-            <input type="submit" value="Upload" />
-        </table>
+        <h4>User's avatar:</h4>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Load</button>
     </form>
-
     <div>
-        <ul>
-            <li th:each="file : ${files}">
-                <img th:src="${file}" height="60px"/>
-            </li>
-        </ul>
+        <img th:src="@{/img/${user.filename}}"/>
     </div>
-
-
-
 </section>
 
 <footer th:insert="fragments/footer :: footer"></footer>

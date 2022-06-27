@@ -21,12 +21,12 @@
     </div>
 
     <h2>BOOKS</h2>
-    <form action="/book">
-        <input name="keyword" id="keyword" size="50" th:value="${keyword}" required/>
-        <input type="submit" value="Search"/>
+    <form name="Write Comment" method="post">
+        <input name="keyword" th:value="${keyword}"/>
+        <button type="submit">Found</button>
     </form>
 
-    <table>
+    <table th:if="${!#lists.isEmpty(books)}">
         <thead>
         <tr>
             <th scope="col">ID</th>

@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.32">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>1707</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1930</IntrospectionStateNumber>
       <ServerVersion>14.2</ServerVersion>
       <StartupTime>1656175719</StartupTime>
       <TimeZones>true ACDT
@@ -801,17 +801,17 @@ false Zulu
 13388||10|C|G
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
-      <IntrospectionStateNumber>1708</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1931</IntrospectionStateNumber>
       <ObjectId>13754</ObjectId>
       <Relations>sequence|table|16699|16700|1
 sequence|table|16706|16707|1
 sequence|table|16718|16719|1
 sequence|table|16806|16807|1
-sequence|table|16839|16840|1
 sequence|table|16912|16913|1
 sequence|table|16968|16969|1
 sequence|table|16977|16978|1
 sequence|table|17046|17047|1
+sequence|table|17290|17291|1
 </Relations>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4227,7 +4227,7 @@ sequence|table|17046|17047|1
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
     <schema id="260" parent="2" name="edu_schema">
-      <IntrospectionStateNumber>1708</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1931</IntrospectionStateNumber>
       <ObjectId>16736</ObjectId>
       <StateNumber>1034</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4267,10 +4267,10 @@ sequence|table|17046|17047|1
       <StateNumber>1154</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="267" parent="260" name="comments_comment_id_seq">
+    <sequence id="267" parent="260" name="comments_id_seq">
       <DataType>bigint|0s</DataType>
-      <ObjectId>16839</ObjectId>
-      <StateNumber>1176</StateNumber>
+      <ObjectId>17290</ObjectId>
+      <StateNumber>1928</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="268" parent="260" name="genres_id_seq">
@@ -4322,8 +4322,8 @@ sequence|table|17046|17047|1
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="276" parent="260" name="comments">
-      <ObjectId>16840</ObjectId>
-      <StateNumber>1176</StateNumber>
+      <ObjectId>17291</ObjectId>
+      <StateNumber>1928</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4617,73 +4617,55 @@ user_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <column id="316" parent="276" name="comment_id">
+    <column id="316" parent="276" name="id">
       <DataType>bigint|0s</DataType>
-      <DefaultExpression>nextval(&apos;edu_schema.comments_comment_id_seq&apos;::regclass)</DefaultExpression>
+      <DefaultExpression>nextval(&apos;edu_schema.comments_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1176</StateNumber>
+      <StateNumber>1928</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="317" parent="276" name="book_id">
-      <DataType>bigint|0s</DataType>
+    <column id="317" parent="276" name="message">
+      <DataType>varchar|0s</DataType>
       <Position>2</Position>
-      <StateNumber>1176</StateNumber>
-      <TypeId>20</TypeId>
+      <StateNumber>1928</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <column id="318" parent="276" name="user_id">
       <DataType>bigint|0s</DataType>
       <Position>3</Position>
-      <StateNumber>1176</StateNumber>
+      <StateNumber>1928</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="319" parent="276" name="message">
-      <DataType>varchar|0s</DataType>
+    <column id="319" parent="276" name="book_id">
+      <DataType>bigint|0s</DataType>
       <Position>4</Position>
-      <StateNumber>1176</StateNumber>
-      <TypeId>1043</TypeId>
+      <StateNumber>1928</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="320" parent="276" name="likes">
-      <DataType>integer|0s</DataType>
-      <Position>5</Position>
-      <StateNumber>1176</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="321" parent="276" name="dislikes">
-      <DataType>integer|0s</DataType>
-      <Position>6</Position>
-      <StateNumber>1176</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <foreign-key id="322" parent="276" name="comments_books_book_id_fk">
+    <foreign-key id="320" parent="276" name="comments_users_id_fk">
+      <ColNames>user_id</ColNames>
+      <ObjectId>17297</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <RefKeyName>table_name_pk</RefKeyName>
+      <StateNumber>1928</StateNumber>
+      <RefTableId>16978</RefTableId>
+      <RefTableName>users</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="321" parent="276" name="comments_books_id_fk">
       <ColNames>book_id</ColNames>
-      <ObjectId>16848</ObjectId>
+      <ObjectId>17302</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
       <RefKeyName>books_pk</RefKeyName>
-      <StateNumber>1176</StateNumber>
+      <StateNumber>1928</StateNumber>
       <RefTableId>16807</RefTableId>
       <RefTableName>books</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="323" parent="276" name="comments_pk">
-      <ClassIds>3124</ClassIds>
-      <ColNames>comment_id</ColNames>
-      <CollationIds>0</CollationIds>
-      <ObjectId>16846</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>1176</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="324" parent="276" name="comments_pk">
-      <ColNames>comment_id</ColNames>
-      <ObjectId>16847</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>1176</StateNumber>
-      <UnderlyingIndexId>16846</UnderlyingIndexId>
-    </key>
-    <column id="325" parent="277" name="id">
+    <column id="322" parent="277" name="id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>nextval(&apos;edu_schema.genres_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4691,13 +4673,13 @@ user_id</ColNames>
       <StateNumber>1571</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="326" parent="277" name="name">
+    <column id="323" parent="277" name="name">
       <DataType>varchar|0s</DataType>
       <Position>2</Position>
       <StateNumber>1571</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="327" parent="277" name="genres_pk">
+    <index id="324" parent="277" name="genres_pk">
       <ClassIds>3124</ClassIds>
       <ColNames>id</ColNames>
       <CollationIds>0</CollationIds>
@@ -4707,14 +4689,14 @@ user_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="328" parent="277" name="genres_pk">
+    <key id="325" parent="277" name="genres_pk">
       <ColNames>id</ColNames>
       <ObjectId>17054</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1571</StateNumber>
       <UnderlyingIndexId>17053</UnderlyingIndexId>
     </key>
-    <column id="329" parent="278" name="id">
+    <column id="326" parent="278" name="id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>nextval(&apos;edu_schema.roles_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4722,13 +4704,13 @@ user_id</ColNames>
       <StateNumber>1373</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="330" parent="278" name="name">
+    <column id="327" parent="278" name="name">
       <DataType>varchar|0s</DataType>
       <Position>2</Position>
       <StateNumber>1373</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="331" parent="278" name="roles_pk">
+    <index id="328" parent="278" name="roles_pk">
       <ClassIds>3124</ClassIds>
       <ColNames>id</ColNames>
       <CollationIds>0</CollationIds>
@@ -4738,14 +4720,14 @@ user_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="332" parent="278" name="roles_pk">
+    <key id="329" parent="278" name="roles_pk">
       <ColNames>id</ColNames>
       <ObjectId>16976</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1373</StateNumber>
       <UnderlyingIndexId>16975</UnderlyingIndexId>
     </key>
-    <column id="333" parent="279" name="id">
+    <column id="330" parent="279" name="id">
       <DataType>bigint|0s</DataType>
       <DefaultExpression>nextval(&apos;edu_schema.users_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4753,19 +4735,19 @@ user_id</ColNames>
       <StateNumber>1384</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="334" parent="279" name="password">
+    <column id="331" parent="279" name="password">
       <DataType>varchar|0s</DataType>
       <Position>4</Position>
       <StateNumber>1384</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="335" parent="279" name="username">
+    <column id="332" parent="279" name="username">
       <DataType>varchar|0s</DataType>
       <Position>5</Position>
       <StateNumber>1412</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="336" parent="279" name="table_name_pk">
+    <index id="333" parent="279" name="table_name_pk">
       <ClassIds>3124</ClassIds>
       <ColNames>id</ColNames>
       <CollationIds>0</CollationIds>
@@ -4775,26 +4757,26 @@ user_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="337" parent="279" name="table_name_pk">
+    <key id="334" parent="279" name="table_name_pk">
       <ColNames>id</ColNames>
       <ObjectId>16985</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1384</StateNumber>
       <UnderlyingIndexId>16984</UnderlyingIndexId>
     </key>
-    <column id="338" parent="280" name="user_id">
+    <column id="335" parent="280" name="user_id">
       <DataType>bigint|0s</DataType>
       <Position>1</Position>
       <StateNumber>1452</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="339" parent="280" name="author_id">
+    <column id="336" parent="280" name="author_id">
       <DataType>bigint|0s</DataType>
       <Position>2</Position>
       <StateNumber>1452</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="340" parent="280" name="users_authors_users_id_fk">
+    <foreign-key id="337" parent="280" name="users_authors_users_id_fk">
       <ColNames>user_id</ColNames>
       <ObjectId>17021</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4805,7 +4787,7 @@ user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="341" parent="280" name="users_authors_authors_author_id_fk">
+    <foreign-key id="338" parent="280" name="users_authors_authors_author_id_fk">
       <ColNames>author_id</ColNames>
       <ObjectId>17026</ObjectId>
       <RefColNames>author_id</RefColNames>
@@ -4816,7 +4798,7 @@ user_id</ColNames>
       <RefTableName>authors</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="342" parent="280" name="users_authors_user_id_author_id_uindex">
+    <index id="339" parent="280" name="users_authors_user_id_author_id_uindex">
       <ClassIds>3124,3124</ClassIds>
       <ColNames>user_id
 author_id</ColNames>
@@ -4826,19 +4808,19 @@ author_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <column id="343" parent="281" name="user_id">
+    <column id="340" parent="281" name="user_id">
       <DataType>bigint|0s</DataType>
       <Position>1</Position>
       <StateNumber>1400</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="344" parent="281" name="role_id">
+    <column id="341" parent="281" name="role_id">
       <DataType>bigint|0s</DataType>
       <Position>2</Position>
       <StateNumber>1400</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="345" parent="281" name="users_roles_users_id_fk">
+    <foreign-key id="342" parent="281" name="users_roles_users_id_fk">
       <ColNames>user_id</ColNames>
       <ObjectId>16989</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4849,7 +4831,7 @@ author_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="346" parent="281" name="users_roles_roles_id_fk">
+    <foreign-key id="343" parent="281" name="users_roles_roles_id_fk">
       <ColNames>role_id</ColNames>
       <ObjectId>16994</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4860,7 +4842,7 @@ author_id</ColNames>
       <RefTableName>roles</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="347" parent="281" name="users_roles_user_id_role_id_uindex">
+    <index id="344" parent="281" name="users_roles_user_id_role_id_uindex">
       <ClassIds>3124,3124</ClassIds>
       <ColNames>user_id
 role_id</ColNames>
@@ -4870,7 +4852,7 @@ role_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <column id="348" parent="285" name="id">
+    <column id="345" parent="285" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;bills_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4878,28 +4860,28 @@ role_id</ColNames>
       <StateNumber>1016</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="349" parent="285" name="operationname">
+    <column id="346" parent="285" name="operationname">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1016</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="350" parent="285" name="billingdetailsid">
+    <column id="347" parent="285" name="billingdetailsid">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1016</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="351" parent="285" name="amount">
+    <column id="348" parent="285" name="amount">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>1016</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="352" parent="285" name="bills_billingdetailsid_fkey">
+    <foreign-key id="349" parent="285" name="bills_billingdetailsid_fkey">
       <ColNames>billingdetailsid</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16725</ObjectId>
@@ -4911,7 +4893,7 @@ role_id</ColNames>
       <RefTableName>details</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="353" parent="285" name="bills_pkey">
+    <index id="350" parent="285" name="bills_pkey">
       <ClassIds>1978</ClassIds>
       <ColNames>id</ColNames>
       <CollationIds>0</CollationIds>
@@ -4922,7 +4904,7 @@ role_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="354" parent="285" name="bills_pkey">
+    <key id="351" parent="285" name="bills_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16724</ObjectId>
@@ -4930,7 +4912,7 @@ role_id</ColNames>
       <StateNumber>1016</StateNumber>
       <UnderlyingIndexId>16723</UnderlyingIndexId>
     </key>
-    <column id="355" parent="286" name="id">
+    <column id="352" parent="286" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;details_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4938,33 +4920,33 @@ role_id</ColNames>
       <StateNumber>1015</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="356" parent="286" name="account">
+    <column id="353" parent="286" name="account">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1015</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="357" parent="286" name="bankname">
+    <column id="354" parent="286" name="bankname">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1015</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="358" parent="286" name="userid">
+    <column id="355" parent="286" name="userid">
       <DataType>integer|0s</DataType>
       <Position>4</Position>
       <StateNumber>1015</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="359" parent="286" name="user_id">
+    <column id="356" parent="286" name="user_id">
       <DataType>integer|0s</DataType>
       <Position>5</Position>
       <StateNumber>1022</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="360" parent="286" name="details_userid_fkey">
+    <foreign-key id="357" parent="286" name="details_userid_fkey">
       <ColNames>userid</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16713</ObjectId>
@@ -4976,7 +4958,7 @@ role_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="361" parent="286" name="fk5fhnw08l4phx5dshclpkuu5b9">
+    <foreign-key id="358" parent="286" name="fk5fhnw08l4phx5dshclpkuu5b9">
       <ColNames>user_id</ColNames>
       <ObjectId>16731</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4987,7 +4969,7 @@ role_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="362" parent="286" name="details_pkey">
+    <index id="359" parent="286" name="details_pkey">
       <ClassIds>1978</ClassIds>
       <ColNames>id</ColNames>
       <CollationIds>0</CollationIds>
@@ -4998,7 +4980,7 @@ role_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="363" parent="286" name="details_pkey">
+    <key id="360" parent="286" name="details_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16712</ObjectId>
@@ -5006,7 +4988,7 @@ role_id</ColNames>
       <StateNumber>1015</StateNumber>
       <UnderlyingIndexId>16711</UnderlyingIndexId>
     </key>
-    <column id="364" parent="287" name="id">
+    <column id="361" parent="287" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5014,21 +4996,21 @@ role_id</ColNames>
       <StateNumber>1014</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="365" parent="287" name="username">
+    <column id="362" parent="287" name="username">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1014</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="366" parent="287" name="address">
+    <column id="363" parent="287" name="address">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1014</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="367" parent="287" name="users_pkey">
+    <index id="364" parent="287" name="users_pkey">
       <ClassIds>1978</ClassIds>
       <ColNames>id</ColNames>
       <CollationIds>0</CollationIds>
@@ -5039,7 +5021,7 @@ role_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="368" parent="287" name="users_pkey">
+    <key id="365" parent="287" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16705</ObjectId>
