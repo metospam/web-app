@@ -22,8 +22,10 @@ public class BookServiceImpl implements BookService {
     @Transactional
     public Long save(BookDto dto) {
         Book book = new Book();
+
         book.setTitle(dto.getTitle());
         book.setDescription(dto.getDescription());
+
         bookRepo.save(book);
 
         return book.getId();
@@ -40,11 +42,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> search(String keyword) {
-        if(keyword == null){
+    public List<Book> search(String query) {
+        if(query == null){
             return (List<Book>) bookRepo.findAll();
         }
-        return bookRepo.search(keyword);
+        return bookRepo.search(query);
     }
 
     @Override
@@ -65,6 +67,5 @@ public class BookServiceImpl implements BookService {
 
         bookRepo.save(book);
     }
-
 
 }

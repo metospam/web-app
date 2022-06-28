@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "authors", schema = "edu_schema")
@@ -22,4 +23,7 @@ public class Author {
 
     @Column(name = "lastname")
     private String lastName;
+
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "author", orphanRemoval = true)
+    private List<Book> books;
 }

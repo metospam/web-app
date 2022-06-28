@@ -9,6 +9,6 @@ import java.util.List;
 public interface BookRepo extends CrudRepository<Book,Long> {
 
     @Query("SELECT b FROM Book b WHERE b.title LIKE %?1%")
-    List<Book> search(String keyword);
+    List<Book> search(String query);
 
 }

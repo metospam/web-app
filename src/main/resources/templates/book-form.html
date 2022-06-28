@@ -27,6 +27,22 @@
                 <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Not Valid</span>
             </div>
 
+            <label for="description">Enter Author</label>
+            <div>
+                <input type="text" class="w3-border-black" id=authorSelect th:field="*{description}">
+                <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Not Valid</span>
+            </div>
+            <select th:field="*{authorId}" class="form-select mb-3" aria-label=".form-select-lg example">
+                <option th:value="-1">-- Новый автор --</option>
+                ></option>
+                <option th:each="author : ${authors}"
+                        th:value="${author.id}"
+                        th:text="${author.firstname}"
+                        th:text="${author.lastname}"
+                ></option>
+            </select>
+
+
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>

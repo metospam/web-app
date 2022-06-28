@@ -4,51 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="UploadFiles(test)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/WebappApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/repository/CommentRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/CommentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="Add comments, fix search bug, -uploaderFiles(test)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/BookAdviceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/RestBookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/repository/AuthorRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/service/AuthorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/AuthorServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/validator/AuthorNotEmpty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/validator/AuthorNotEmptyValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/bookNotFound.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/WebappApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/config/ModelMapperConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/config/ModelMapperConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/config/StorageProperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controller/UserAdviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/UserAdviceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/exception/BookNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/exception/BookNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/exception/StorageException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/exception/StorageFileNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/exception/UserNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/MyUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/MyUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/dto/BookDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/dto/BookDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/repository/BookRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/repository/BookRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/repository/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/repository/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/StorageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/impl/StorageServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/validator/PasswordMatches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/validator/PasswordMatches.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/validator/PasswordMatchesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/validator/PasswordMatchesValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/controller/UserAdviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/UserAdviceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/exception/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/dto/BookDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/dto/BookDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/repository/BookRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/repository/BookRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/book-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/book-form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookPageAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPageAuth.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userNotFound.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userNotFound.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +89,7 @@
       <recent name="C:\Users\danil\AppData\Local\Temp\Rar$DRa7116.16990\webapp\src\main\resources\templates\fragments" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.WebappApplication (1)">
+  <component name="RunManager">
     <configuration name="WebappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
       <extension name="coverage">
@@ -132,7 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.WebappApplication (1)" />
+        <item itemvalue="Spring Boot.WebappApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +204,12 @@
       <workItem from="1656281361397" duration="3439000" />
       <workItem from="1656286049098" duration="2129000" />
       <workItem from="1656291657265" duration="11560000" />
-      <workItem from="1656309421676" duration="945000" />
+      <workItem from="1656309421676" duration="2705000" />
+      <workItem from="1656364160255" duration="2607000" />
+      <workItem from="1656372939996" duration="237000" />
+      <workItem from="1656388458784" duration="3678000" />
+      <workItem from="1656392294301" duration="3070000" />
+      <workItem from="1656397134829" duration="4587000" />
     </task>
     <task id="LOCAL-00001" summary="add Spring UserDetailService, BCrypt.">
       <created>1654617260642</created>
@@ -282,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656282051529</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add comments, fix search bug, -uploaderFiles(test)">
+      <created>1656311430395</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1656311430395</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +300,8 @@
     <MESSAGE value="Sub Action" />
     <MESSAGE value="Search, DeleteBook Action" />
     <MESSAGE value="UploadFiles(test)" />
-    <option name="LAST_COMMIT_MESSAGE" value="UploadFiles(test)" />
+    <MESSAGE value="Add comments, fix search bug, -uploaderFiles(test)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add comments, fix search bug, -uploaderFiles(test)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

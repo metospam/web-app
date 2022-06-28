@@ -5,6 +5,7 @@ import melaside.model.Comment;
 import melaside.model.MyUser;
 import melaside.model.User;
 import melaside.model.dto.BookDto;
+import melaside.service.AuthorService;
 import melaside.service.BookService;
 import melaside.service.CommentService;
 import melaside.service.UserService;
@@ -28,24 +29,11 @@ public class BookController {
     private final BookService bookService;
     private final UserService userService;
     private final CommentService commentService;
+    private final AuthorService authorService;
 
 
     @GetMapping
-    public String index(Model model) {
-        List<Book> books = bookService.findAll();
-
-        model.addAttribute("books", books);
-
-        return "books";
-    }
-
-    @PostMapping
-    public String filter(@RequestParam String keyword, Model model) {
-        List<Book> books = bookService.search(keyword);
-
-        model.addAttribute("books", books);
-        model.addAttribute("keyword", keyword);
-
+    public String index() {
         return "books";
     }
 
@@ -56,8 +44,9 @@ public class BookController {
     }
 
     @RequestMapping("/new")
-    public String bookForm(@Valid BookDto bookDto, BindingResult bindingResult) {
-
+    public String bookForm(@Valid BookDto bookDto, BindingResult bindingResult,
+                           Model model) {
+        model.addAttribute("authors", authorService.findAll());
         if (bindingResult.hasErrors()) {
             return "book-form";
         }
@@ -71,7 +60,6 @@ public class BookController {
     @GetMapping("/{id}")
     public String bookPage(@AuthenticationPrincipal MyUser myUser,
                            @PathVariable("id") Long id, Model model) {
-
         Book book = bookService.findById(id);
         List<Comment> comments = commentService.findAllCommentsByBookId(id);
 
@@ -86,7 +74,8 @@ public class BookController {
 
         user.ifPresent(value -> model.addAttribute(
                 "books", value.getBooks().stream()
-                        .map(Book::getId).collect(Collectors.toList())));
+                        .map(Book::getId)
+                        .collect(Collectors.toList())));
 
         return "bookPageAuth";
     }

@@ -9,7 +9,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "books", schema = "edu_schema")
-@Getter @Setter
+@Getter
+@Setter
 @NoArgsConstructor
 public class Book {
 
@@ -33,15 +34,24 @@ public class Book {
     )
     private User user;
 
-    @ManyToMany
+    @ManyToOne
     @JoinTable(
             name = "books_genres",
             schema = "edu_schema",
             joinColumns = {@JoinColumn(name = "book_id")},
             inverseJoinColumns = {@JoinColumn(name = "genre_id")}
     )
-    private List<Genre> genres;
+    private Genre genre;
 
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "book", orphanRemoval = true)
     private List<Comment> comments;
+
+    @ManyToOne
+    @JoinTable(
+            name = "books_authors",
+            schema = "edu_schema",
+            joinColumns = {@JoinColumn(name = "book_id")},
+            inverseJoinColumns = {@JoinColumn(name = "author_id")}
+    )
+    private Author author;
 }
