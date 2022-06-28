@@ -5,35 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="Add comments, fix search bug, -uploaderFiles(test)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/BookAdviceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/RestBookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/repository/AuthorRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/service/AuthorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/AuthorServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/validator/AuthorNotEmpty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/validator/AuthorNotEmptyValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/bookNotFound.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/exception/AuthorNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/controller/UserAdviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/UserAdviceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/exception/UserNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/exception/UserNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Author.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/dto/BookDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/dto/BookDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/repository/BookRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/repository/BookRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/service/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/AuthorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/service/impl/AuthorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/AuthorServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/melaside/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/validator/AuthorNotEmptyValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/validator/AuthorNotEmptyValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/book-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/book-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookPageAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPageAuth.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userNotFound.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userNotFound.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -55,8 +53,16 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="webapp/invalid/JPA" />
+    </ignored-facets>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="29keP5MhfOoUvyeijxRIxTQtTI1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -64,25 +70,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="postgresql" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="discord-application" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danil/Downloads/new_ui_preview.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b6920d9083c8e76685bcc8db34b8c9bb&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danil\IdeaProjects\web-app\src\main\resources\templates" />
       <recent name="C:\Users\danil\IdeaProjects\java\web-app\src\main\resources" />
       <recent name="C:\Users\danil\AppData\Local\Temp\Rar$DRa7116.16990\webapp\src\main\resources\templates" />
       <recent name="C:\Users\danil\AppData\Local\Temp\Rar$DRa7116.16990\webapp\src\main\resources\static" />
@@ -92,13 +103,13 @@
   <component name="RunManager">
     <configuration name="WebappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="melaside.WebappApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="melaside.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="melaside.WebappApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -210,6 +221,16 @@
       <workItem from="1656388458784" duration="3678000" />
       <workItem from="1656392294301" duration="3070000" />
       <workItem from="1656397134829" duration="4587000" />
+      <workItem from="1656402199269" duration="55000" />
+      <workItem from="1656402268628" duration="546000" />
+      <workItem from="1656402829919" duration="772000" />
+      <workItem from="1656403624479" duration="37000" />
+      <workItem from="1656403675425" duration="41000" />
+      <workItem from="1656403730511" duration="1306000" />
+      <workItem from="1656405525929" duration="1989000" />
+      <workItem from="1656407539501" duration="1724000" />
+      <workItem from="1656410271207" duration="82000" />
+      <workItem from="1656431608332" duration="646000" />
     </task>
     <task id="LOCAL-00001" summary="add Spring UserDetailService, BCrypt.">
       <created>1654617260642</created>

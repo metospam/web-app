@@ -16,7 +16,7 @@ public class AuthorNotEmptyValidator implements ConstraintValidator<AuthorNotEmp
     public boolean isValid(BookDto bookDto, ConstraintValidatorContext context) {
 
         boolean valid = bookDto.getAuthorId() != -1 ||
-                (bookDto.getAuthorName() != null && bookDto.getAuthorName().length() > 0);
+                (bookDto.getAuthorInitials() != null && bookDto.getAuthorInitials().length() > 0);
 
         if(!valid){
             context.disableDefaultConstraintViolation();
@@ -26,7 +26,7 @@ public class AuthorNotEmptyValidator implements ConstraintValidator<AuthorNotEmp
                     .addConstraintViolation()
 
                     .buildConstraintViolationWithTemplate("You must indicate author or create new.")
-                    .addPropertyNode("authorName")
+                    .addPropertyNode("authorInitials")
                     .addConstraintViolation();
         }
 

@@ -46,12 +46,7 @@ public class Book {
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "book", orphanRemoval = true)
     private List<Comment> comments;
 
-    @ManyToOne
-    @JoinTable(
-            name = "books_authors",
-            schema = "edu_schema",
-            joinColumns = {@JoinColumn(name = "book_id")},
-            inverseJoinColumns = {@JoinColumn(name = "author_id")}
-    )
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "author_id")
     private Author author;
 }

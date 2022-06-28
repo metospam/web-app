@@ -1,16 +1,22 @@
 package melaside.controller;
 
+import melaside.model.MyUser;
 import melaside.model.User;
 import melaside.model.dto.UserDto;
 import melaside.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/user")
@@ -33,7 +39,25 @@ public class UserController {
     }
 
     @PostMapping("/{id}")
-    public String updateUser(){
+    public String updateUser(@RequestParam("file")MultipartFile file,
+                             @AuthenticationPrincipal MyUser myUser) throws IOException {
+
+        if(file != null){
+            File uploadDir = new File(uploadPath);
+
+            if(uploadDir.exists()){
+                uploadDir.mkdir();
+            }
+
+            String uuidFile = UUID.randomUUID().toString();
+            String resultFileName = uuidFile + "." + file.getOriginalFilename();
+
+            file.transferTo(new File(resultFileName));
+
+            User user = userService.findById(myUser.getId());
+            user.setFileName(resultFileName);
+        }
+
         return "edit-user";
     }
 

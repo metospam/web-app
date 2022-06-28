@@ -1,11 +1,13 @@
 package melaside.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import melaside.exception.AuthorNotFoundException;
 import melaside.model.Author;
 import melaside.repository.AuthorRepo;
 import melaside.service.AuthorService;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -15,11 +17,11 @@ public class AuthorServiceImpl implements AuthorService {
     private final AuthorRepo authorRepo;
 
     @Override
-    public void create(String firstName, String lastName) {
+    @Transactional
+    public void create(String initials) {
         Author author = new Author();
 
-        author.setFirstName(firstName);
-        author.setLastName(lastName);
+        author.setInitials(initials);
 
         authorRepo.save(author);
     }
@@ -27,6 +29,11 @@ public class AuthorServiceImpl implements AuthorService {
     @Override
     public List<Author> findAll() {
         return (List<Author>) authorRepo.findAll();
+    }
+
+    @Override
+    public Author findById(Long id) {
+        return authorRepo.findById(id).orElseThrow(() -> new AuthorNotFoundException(id));
     }
 
 

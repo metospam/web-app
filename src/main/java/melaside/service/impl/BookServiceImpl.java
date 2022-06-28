@@ -1,10 +1,12 @@
 package melaside.service.impl;
 
 import melaside.exception.BookNotFoundException;
+import melaside.model.Author;
 import melaside.model.Book;
 import melaside.model.User;
 import melaside.model.dto.BookDto;
 import melaside.repository.BookRepo;
+import melaside.service.AuthorService;
 import melaside.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
 
     private final BookRepo bookRepo;
+    private final AuthorService authorService;
 
     @Override
     @Transactional
@@ -25,6 +28,14 @@ public class BookServiceImpl implements BookService {
 
         book.setTitle(dto.getTitle());
         book.setDescription(dto.getDescription());
+
+        if (dto.getAuthorId() != -1) {
+            book.setAuthor(authorService.findById(dto.getAuthorId()));
+        } else {
+            Author author = new Author();
+            author.setInitials(dto.getAuthorInitials());
+            book.setAuthor(author);
+        }
 
         bookRepo.save(book);
 

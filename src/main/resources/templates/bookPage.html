@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <title>melaside</title>
+</head>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+    <h2 class="w3-wide">Book Page</h2>
+    <div th:object="${book}">
+        <h3 th:text="*{title}"></h3>
+        <h4 th:text="*{description}"></h4>
+    </div>
+
+    <table th:if="${!#lists.isEmpty(comments)}">
+        <thead>
+        <tr>
+            <th scope="col">Comments</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="comment : ${comments}">
+            <td>
+                <h4 th:text="${comment.user.username}"></h4>
+                <h5 th:text="${comment.message}"></h5>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<footer th:insert="fragments/footer :: footer"></footer>
+
+</body>
+</html>

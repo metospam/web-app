@@ -18,6 +18,6 @@ public class BookDto {
 
     private Long authorId;
 
-    private String authorName;
+    private String authorInitials;
 
 }

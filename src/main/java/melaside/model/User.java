@@ -23,6 +23,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "filename")
+    private String fileName;
+
     @ManyToMany
     @JoinTable(
             name = "users_roles",

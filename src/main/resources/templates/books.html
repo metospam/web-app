@@ -49,7 +49,7 @@
             })
 
             function updateTable(data) {
-                const content = data.map($ => '<tr><td>' + $.id + '</td><td><a href="book/' + $.id + '"</td>' + $.title + '</td><td>' + $.genre.name + '</td> <td>' + $.author.name + '</td></tr>');
+                const content = data.map($ => '<tr><td>' + $.id + '</td><td><a href="book/' + $.id + '"</td>' + $.title + '</td><td>' + $.genre.name + '</td> <td>' + $.author.initials + '</td></tr>');
                 $('#tableBody').html(content);
             }
 

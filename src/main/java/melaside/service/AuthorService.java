@@ -6,8 +6,10 @@ import java.util.List;
 
 public interface AuthorService {
 
-    void create(String firstName, String lastName);
+    void create(String initials);
 
     List<Author> findAll();
+
+    Author findById(Long id);
 
 }
