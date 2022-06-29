@@ -5,7 +5,9 @@ import melaside.model.dto.UserDto;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UserService extends UserDetailsService {
-    Long save(UserDto dto);
+    Long saveDto(UserDto dto);
+
+    void save(User user);
 
     User findById(Long id);
 

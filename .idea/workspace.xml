@@ -4,26 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="Add comments, fix search bug, -uploaderFiles(test)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/exception/AuthorNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="34bcce59-7274-4d48-aaaa-5017710c0f5f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/melaside/config/StaticConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/086be4cd-f124-41e6-b401-88bfdca043e8/storage_v2/_src_/database/postgres.edMnLQ/schema/edu_schema.SrLvMA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/melaside/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Author.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/Comment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/model/dto/BookDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/model/dto/BookDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/service/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/AuthorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/service/impl/AuthorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/AuthorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/validator/AuthorNotEmptyValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/validator/AuthorNotEmptyValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/book-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/book-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/melaside/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/melaside/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bookPageAuth.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bookPageAuth.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edit-user.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +228,13 @@
       <workItem from="1656405525929" duration="1989000" />
       <workItem from="1656407539501" duration="1724000" />
       <workItem from="1656410271207" duration="82000" />
-      <workItem from="1656431608332" duration="646000" />
+      <workItem from="1656431608332" duration="715000" />
+      <workItem from="1656432351161" duration="5107000" />
+      <workItem from="1656437684577" duration="132000" />
+      <workItem from="1656439773130" duration="4165000" />
+      <workItem from="1656444578371" duration="198000" />
+      <workItem from="1656445992698" duration="63000" />
+      <workItem from="1656472393051" duration="173000" />
     </task>
     <task id="LOCAL-00001" summary="add Spring UserDetailService, BCrypt.">
       <created>1654617260642</created>
@@ -295,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656311430395</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="save">
+      <created>1656432319807</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1656432319807</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +333,8 @@
     <MESSAGE value="Search, DeleteBook Action" />
     <MESSAGE value="UploadFiles(test)" />
     <MESSAGE value="Add comments, fix search bug, -uploaderFiles(test)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add comments, fix search bug, -uploaderFiles(test)" />
+    <MESSAGE value="save" />
+    <option name="LAST_COMMIT_MESSAGE" value="save" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

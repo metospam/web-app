@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional
-    public Long save(UserDto dto) {
+    public Long saveDto(UserDto dto) {
         User user = new User();
         user.setUsername(dto.getUsername());
         user.setPassword(encoder.encode(dto.getPassword()));
@@ -54,6 +54,11 @@ public class UserServiceImpl implements UserService {
         userRepo.save(user);
 
         return user.getId();
+    }
+
+    @Override
+    public void save(User user) {
+        userRepo.save(user);
     }
 
     private List<? extends GrantedAuthority> createAuthorities(List<Role> roles) {

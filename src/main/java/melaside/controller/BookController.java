@@ -115,9 +115,7 @@ public class BookController {
 
     @GetMapping("/unsubscribe/{id}")
     public String bookPageRemove(@PathVariable("id") Long id) {
-
         Book book = bookService.findById(id);
-
         bookService.deleteBookFromUser(book);
 
         return "redirect:/book/" + id;
@@ -126,7 +124,6 @@ public class BookController {
     @GetMapping("/delete/{id}")
     public String deleteBook(@PathVariable("id") Long id) {
         Book book = bookService.findById(id);
-
         bookService.delete(book);
 
         return "redirect:/book";

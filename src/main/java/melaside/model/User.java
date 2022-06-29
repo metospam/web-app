@@ -1,5 +1,6 @@
 package melaside.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -40,5 +41,9 @@ public class User {
 
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "user")
     private List<Comment> comments;
+
+    public boolean isFileNamePresent(){
+        return fileName != null && fileName.length() > 0;
+    }
 
 }

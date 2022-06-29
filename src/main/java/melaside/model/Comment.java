@@ -1,5 +1,7 @@
 package melaside.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,8 +23,10 @@ public class Comment {
     private String message;
 
     @ManyToOne
+    @JsonIgnore
     Book book;
 
     @ManyToOne
+    @JsonIgnore
     User user;
 }

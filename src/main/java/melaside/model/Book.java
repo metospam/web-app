@@ -1,5 +1,8 @@
 package melaside.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,6 +29,7 @@ public class Book {
     private String description;
 
     @ManyToOne
+    @JsonIgnore
     @JoinTable(
             name = "books_users",
             schema = "edu_schema",
