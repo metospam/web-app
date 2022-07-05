@@ -3,7 +3,6 @@ package melaside.controller;
 import melaside.model.MyUser;
 import melaside.model.User;
 import melaside.model.dto.UserDto;
-import melaside.repository.UserRepo;
 import melaside.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -69,16 +68,16 @@ public class UserController {
         return "edit-user";
     }
 
-    @GetMapping("/registration")
+    @GetMapping("/new")
     public String newUser(UserDto userDto) {
-        return "user-form";
+        return "sign-in";
     }
 
-    @PostMapping("/registration")
+    @PostMapping("/new")
     public String createAccount(@Valid UserDto userDto, BindingResult bindingResult){
 
         if(bindingResult.hasErrors()){
-            return "user-form";
+            return "sign-in";
         }
         userService.saveDto(userDto);
         return "redirect:/login";

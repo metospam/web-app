@@ -15,8 +15,9 @@ public class AuthorNotEmptyValidator implements ConstraintValidator<AuthorNotEmp
     @Override
     public boolean isValid(BookDto bookDto, ConstraintValidatorContext context) {
 
-        boolean valid = bookDto.getAuthorId() != -1 ||
-                (bookDto.getAuthorInitials() != null && bookDto.getAuthorInitials().length() > 0);
+        boolean valid =
+                    bookDto.getAuthorId() != -1
+                || (bookDto.getAuthorInitials() != null && bookDto.getAuthorInitials().length() > 0);
 
         if(!valid){
             context.disableDefaultConstraintViolation();

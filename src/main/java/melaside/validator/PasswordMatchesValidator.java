@@ -5,15 +5,29 @@ import melaside.model.dto.UserDto;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class PasswordMatchesValidator implements ConstraintValidator<PasswordMatches, Object> {
+public class PasswordMatchesValidator implements ConstraintValidator<PasswordMatches, UserDto> {
 
     @Override
     public void initialize(PasswordMatches passwordMatches) {
     }
 
     @Override
-    public boolean isValid(Object obj, ConstraintValidatorContext context) {
-        UserDto userDto = (UserDto) obj;
-        return userDto.getPassword().equals(userDto.getMatchingPassword());
+    public boolean isValid(UserDto userDto, ConstraintValidatorContext context) {
+        boolean valid = userDto.getPassword().equals(userDto.getMatchingPassword());
+
+        if(!valid){
+            context.disableDefaultConstraintViolation();
+            context
+
+                    .buildConstraintViolationWithTemplate("Пароли должны совпадать.")
+                    .addPropertyNode("password")
+                    .addConstraintViolation()
+
+                    .buildConstraintViolationWithTemplate("Пароли должны совпадать.")
+                    .addPropertyNode("matchingPassword")
+                    .addConstraintViolation();
+        }
+
+        return valid;
     }
 }

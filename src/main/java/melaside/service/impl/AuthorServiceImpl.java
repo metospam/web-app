@@ -36,5 +36,10 @@ public class AuthorServiceImpl implements AuthorService {
         return authorRepo.findById(id).orElseThrow(() -> new AuthorNotFoundException(id));
     }
 
+    @Override
+    public void save(Author author) {
+        authorRepo.save(author);
+    }
+
 
 }

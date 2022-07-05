@@ -8,18 +8,18 @@
 
 <header class="w3-animate-top w3-bar w3-black">
     <nav sec:authorize="${!isAuthenticated()}" class="w3-bar w3-black">
-    <a href="/" class="w3-button w3-bar-item">Home</a>
-    <a href="/book" class="w3-button w3-bar-item">Books</a>
-    <a href="/404" class="w3-button w3-bar-item">Users</a>
-    <a href="/404" class="w3-button w3-bar-item">About Us</a>
+    <a href="/" class="w3-button w3-bar-item">Главная страница</a>
+    <a href="/book" class="w3-button w3-bar-item">Каталог</a>
+    <a href="/404" class="w3-button w3-bar-item">Пользователи</a>
+    <a href="/404" class="w3-button w3-bar-item">Наша история</a>
 </nav>
 
     <nav sec:authorize="${isAuthenticated()}" class="w3-bar w3-black">
-        <a href="/" class="w3-button w3-bar-item">Home</a>
-        <a href="/book" class="w3-button w3-bar-item">Books</a>
-        <a href="/404" class="w3-button w3-bar-item">Users</a>
-        <a href="/404" class="w3-button w3-bar-item">About Us</a>
-        <a th:href="@{/user/{id}(id=${#authentication.getPrincipal().id})}" class="w3-button w3-bar-item">My Account</a>
+        <a href="/" class="w3-button w3-bar-item">Главная страница</a>
+        <a href="/book" class="w3-button w3-bar-item">Каталог</a>
+        <a href="/404" class="w3-button w3-bar-item">Пользователи</a>
+        <a href="/404" class="w3-button w3-bar-item">Наша история</a>
+        <a th:href="@{/user/{id}(id=${#authentication.getPrincipal().id})}" class="w3-button w3-bar-item">Кабинет</a>
     </nav>
 </header>
 </body>

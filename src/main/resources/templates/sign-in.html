@@ -10,31 +10,32 @@
 <header th:replace="fragments/header :: header"></header>
 
 <section class="w3-container w3-center w3-content" style="max-width:600px">
-    <h2 class="w3-wide">USER FORM</h2>
+    <h2 class="w3-wide">Регистрация</h2>
 
     <div class="forms">
 
         <form method="post" th:object="${userDto}">
-            <label for="username">Enter Nickname</label>
+            <label for="username">Укажите никнейм</label>
             <div>
                 <input type="text" class="w3-border-black" id="username" th:field="*{username}">
                 <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Not valid</span>
             </div>
 
-            <label for="password">Enter Password</label>
+            <label for="password">Укажите пароль</label>
             <div>
                 <input type="text" class="w3-border-black" id=password th:field="*{password}">
                 <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Not Valid</span>
             </div>
 
-            <label for="matchingPassword">Confirm Password</label>
+            <label for="matchingPassword">Подтвердите пароль</label>
             <div>
                 <input type="text" class="w3-border-black" id=matchingPassword th:field="*{matchingPassword}">
                 <span th:if="${#fields.hasErrors('matchingPassword')}" th:errors="*{matchingPassword}">Not Valid</span>
             </div>
 
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button class="w3-button" type="submit">Зарегистрироваться</button>
         </form>
+        <a th:href="@{/login}">Перейти к авторизации</a>
     </div>
 
 </section>

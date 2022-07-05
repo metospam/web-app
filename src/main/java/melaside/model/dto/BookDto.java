@@ -20,4 +20,10 @@ public class BookDto {
 
     private String authorInitials;
 
+    private Long genreId;
+
+    private String genreName;
+
+    private Long price;
+
 }

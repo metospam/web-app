@@ -10,41 +10,63 @@
 <header th:replace="fragments/header :: header"></header>
 
 <section class="w3-container w3-center w3-content" style="max-width:600px">
-    <h2 class="w3-wide">Book Page</h2>
+    <h2 class="w3-wide">Страница книги</h2>
     <div th:object="${book}">
+        <div th:if="${!#strings.isEmpty(book.getFileName())}">
+            <img height="300px" th:src="@{/img/{filename}(filename = ${book.getFileName()})}"/>
+        </div>
+        <h4>Название книги</h4>
         <h3 th:text="*{title}"></h3>
+        <h4>Описание книги</h4>
         <h4 th:text="*{description}"></h4>
+        <h4>Жанр книги</h4>
+        <p th:text="*{getGenre().getName()}"></p>
+        <h4>Автор книги</h4>
+        <p th:text="*{getAuthor().getInitials()}"></p>
+        <h4>Цена книги</h4>
+        <p th:text="*{getPrice() + 'р'}"></p>
     </div>
     <div sec:authorize="${isAuthenticated()}">
-        <div th:if="${#lists.contains(books, book.id)}">
-        <a th:href="@{/book/unsubscribe/{id}(id=${book.id})}" class="w3-button">UnSub</a>
+        <div th:if="${#lists.contains(books, book.getId())}">
+        <a th:href="@{/book/unsubscribe/{id}(id=${book.getId()})}" class="w3-button">Убрать из избранного</a>
         </div>
 
-        <div th:if="${!#lists.contains(books, book.id)}">
-            <a th:href="@{/book/subscribe/{id}(id=${book.id})}" class="w3-button">Sub</a>
+        <div th:if="${!#lists.contains(books, book.getId())}">
+            <a th:href="@{/book/subscribe/{id}(id=${book.getId()})}" class="w3-button">Добавить в избранное</a>
         </div>
     </div>
+
+    <div>
+        <p th:text="${book.getUsers().size()}"></p>
+    </div>
+
 
     <form method="post">
         <input name="text" th:value="${text}" required/>
-        <button type="submit">Send</button>
+        <button type="submit">Добавить комментарий</button>
     </form>
 
     <table th:if="${!#lists.isEmpty(comments)}">
         <thead>
         <tr>
-            <th scope="col">Comments</th>
+            <th scope="col">Комментарии</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="comment : ${comments}">
             <td>
-                <a class="w3-button" th:href="@{/user/{id}(id = ${comment.user.getId()})}" th:text="${comment.user.username}"></a>
-                <h5 th:text="${comment.message}"></h5>
+                <a class="w3-button" th:href="@{/user/{id}(id = ${comment.user.getId()})}" th:text="${comment.getUser().getUsername()}"></a>
+                <h5 th:text="${comment.getMessage()}"></h5>
             </td>
         </tr>
         </tbody>
     </table>
+
+    <div th:if="${comments.getTotalPages() > 0}" class="pagination"
+         th:each="pageNumber : ${pageNumbers}">
+        <a th:href="@{/book/{id}(size = ${comments.getSize()}, page = ${pageNumber}, id = ${book.getId()})}"
+           th:text="${pageNumber}"></a>
+    </div>
 </section>
 
 <footer th:insert="fragments/footer :: footer"></footer>

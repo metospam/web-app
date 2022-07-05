@@ -12,4 +12,6 @@ public interface AuthorService {
 
     Author findById(Long id);
 
+    void save(Author author);
+
 }

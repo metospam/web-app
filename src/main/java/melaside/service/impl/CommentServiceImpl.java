@@ -6,6 +6,8 @@ import melaside.model.User;
 import melaside.repository.CommentRepo;
 import melaside.service.CommentService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,7 +31,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> findAllCommentsByBookId(Long id) {
-        return commentRepo.findAllCommentsByBookId(id);
+    public Page<Comment> findAllCommentsByBookId(Long id, Pageable pageable) {
+        return commentRepo.findAllCommentsByBookId(id, pageable);
     }
 }

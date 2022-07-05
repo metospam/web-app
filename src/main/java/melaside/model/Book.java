@@ -3,6 +3,7 @@ package melaside.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Cleanup;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,29 +29,29 @@ public class Book {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne
-    @JsonIgnore
+    @Column(name = "price")
+    private double price;
+
+    @Column(name = "filename")
+    private String fileName;
+
+    @ManyToMany
     @JoinTable(
             name = "books_users",
             schema = "edu_schema",
             joinColumns = {@JoinColumn(name = "book_id")},
             inverseJoinColumns = {@JoinColumn(name = "user_id")}
     )
-    private User user;
+    private List<User> users;
 
-    @ManyToOne
-    @JoinTable(
-            name = "books_genres",
-            schema = "edu_schema",
-            joinColumns = {@JoinColumn(name = "book_id")},
-            inverseJoinColumns = {@JoinColumn(name = "genre_id")}
-    )
+    @OneToOne
+    @JoinColumn(name = "genre_id")
     private Genre genre;
 
-    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "book", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "book", orphanRemoval = true)
     private List<Comment> comments;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id")
     private Author author;
 }

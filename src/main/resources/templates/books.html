@@ -10,30 +10,51 @@
 <header th:replace="fragments/header :: header"></header>
 
 <section class="w3-container w3-center w3-content" style="max-width:600px">
-    <h2 class="w3-wide">Search Product</h2>
+    <h2 class="w3-wide">Поиск книги</h2>
 </section>
 
 <section class="w3-container w3-center w3-content" style="max-width:600px">
 
     <div sec:authorize="hasAuthority('ROLE_ADMIN')">
-        <a class="w3-button" href="/book/new">Add book</a>
+        <a class="w3-button" href="/book/new">Добавить книгу</a>
     </div>
 
     <div>
-        <input type="text" id="filter"/>
+         <!-- <input type="text" id="filter"/> -->
     </div>
+
+    <form action="/book">
+        <input name="query" id="query" size="50" th:value="${query}"/>
+        <input type="submit" value="Search"/>
+    </form>
 
     <table>
         <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Title</th>
-            <th scope="col">Genre</th>
-            <th scope="col">Author</th>
+            <th scope="col">Название</th>
+            <th scope="col">Жанр</th>
+            <th scope="col">Автор</th>
+            <th scope="col">Цена</th>
         </tr>
         </thead>
-        <tbody id="tableBody"></tbody>
+        <tbody>
+        <tr th:each="book:${books}">
+        <td th:text="${book.getId()}"></td>
+        <td>
+            <a th:href="@{/book/{id}(id = ${book.getId()})}" th:text="${book.getTitle()}" />
+        </td>
+        <td th:text="${book.genre.getName()}"></td>
+        <td th:text="${book.author.getInitials()}"></td>
+        <td th:text="${book.getPrice()} + 'р'"></td>
+        </tr>
+        </tbody>
     </table>
+    <div th:if="${books.getTotalPages() > 0 && books.getTotalPages() != 1}" class="pagination"
+         th:each="pageNumber : ${pageNumbers}">
+        <a th:href="@{/book(size = ${books.getSize()}, page = ${pageNumber})}"
+           th:text="${pageNumber}"></a>
+    </div>
 
 </section>
 
@@ -49,7 +70,7 @@
             })
 
             function updateTable(data) {
-                const content = data.map($ => '<tr><td>' + $.id + '</td><td><a href="book/' + $.id + '"</td>' + $.title + '</td><td>' + $.genre.name + '</td><td>' + $.author.initials + '</td></tr>');
+                const content = data.map($ => '<tr><td>' + $.id + '</td><td><a href="book/' + $.id + '"</td>' + $.title + '</td><td>' + $.genre.name + '</td><td>' + $.author.initials + '</td><td>' + $.price + "р" + '</td></tr>');
                 $('#tableBody').html(content);
             }
 

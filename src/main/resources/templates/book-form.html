@@ -2,6 +2,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="//rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.css"
+      rel="stylesheet">
 <head>
     <title>melaside</title>
 </head>
@@ -10,45 +12,71 @@
 <header th:replace="fragments/header :: header"></header>
 
 <section class="w3-container w3-center w3-content" style="max-width:600px">
-    <h2 class="w3-wide">BOOK FORM</h2>
+
+    <h2 class="w3-wide">Новая книга</h2>
 
     <div class="forms">
 
         <form method="post" th:object="${bookDto}">
-            <label for="title">Enter Title</label>
+
+            <label for="title">Укажите название</label>
             <div>
                 <input type="text" class="w3-border-black" id="title" th:field="*{title}">
                 <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Not valid</span>
             </div>
 
-            <label for="description">Enter Description</label>
+            <label for="description">Заполните описание</label>
             <div>
                 <input type="text" class="w3-border-black" id=description th:field="*{description}">
                 <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Not Valid</span>
             </div>
 
-            <label for="description">Enter Author</label>
+            <label for="authorCreate">Создать автора</label>
             <div>
-                <input type="text" class="w3-border-black" id=authorSelect th:field="*{description}">
-                <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Not Valid</span>
+                <input type="text" class="w3-border-black" id=authorCreate th:field="*{authorInitials}">
+                <span th:if="${#fields.hasErrors('authorInitials')}" th:errors="*{authorInitials}">Not Valid</span>
             </div>
-            <select th:field="*{authorId}" aria-label=".form-select-lg example">
-                <option th:value="-1">-- Выбрать автора --</option>
-                <option th:each="author : ${authors}"
-                        th:value="${author.id}"
-                        th:text="${author.initials}"
-                ></option>
-            </select>
-            <input type="text" class="form-control" th:field="*{authorInitials}">
-            <span th:if="${#fields.hasErrors('authorInitials')}" th:errors="*{authorInitials}">Not valid</span>
 
-            <button type="submit" class="w3-button">Create book</button>
+            <label for="select-author"> or Select Author</label>
+            <div>
+                <select th:field="${bookDto.authorId}" id="select-author">
+                    <option th:value="-1">-- Новый автор --</option>
+                    <option th:each="author : ${authors}"
+                            th:value="${author.getId()}"
+                            th:text="${author.getInitials()}"
+                    ></option>
+                </select>
+            </div>
+
+            <label for="select-genre">Выберите жанр</label>
+            <div>
+                <select th:field="${bookDto.genreId}" id="select-genre">
+                    <option th:value="-1">-- Выбрать жанр --</option>
+                    <option th:each="genre : ${genres}"
+                            th:value="${genre.getId()}"
+                            th:text="${genre.getName()}"
+                    ></option>
+                </select>
+            </div>
+
+            <button type="submit" class="w3-button">Добавить книгу</button>
         </form>
     </div>
 
 </section>
 
 <footer th:insert="fragments/footer :: footer"></footer>
+<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="//rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.js"></script>
+<script>
+    $('#editable-select-author').editableSelect({
+        effects: 'slide'
+    });
+
+    $('#editable-select-genre').editableSelect({
+        effects: 'slide'
+    });
+</script>
 
 </body>
 </html>
