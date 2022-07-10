@@ -31,7 +31,7 @@
     <table>
         <thead>
         <tr>
-            <th scope="col">ID</th>
+            <th scope="col"></th>
             <th scope="col">Название</th>
             <th scope="col">Жанр</th>
             <th scope="col">Автор</th>
@@ -40,7 +40,11 @@
         </thead>
         <tbody>
         <tr th:each="book:${books}">
-        <td th:text="${book.getId()}"></td>
+        <td>
+            <div th:if="${!#strings.isEmpty(book.getFileName())}">
+                <img height="300px" th:src="@{/img/{filename}(filename = ${book.getFileName()})}"/>
+            </div>
+        </td>
         <td>
             <a th:href="@{/book/{id}(id = ${book.getId()})}" th:text="${book.getTitle()}" />
         </td>

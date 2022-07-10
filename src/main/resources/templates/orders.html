@@ -1,0 +1,59 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <title>melaside</title>
+</head>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+    <h2 class="w3-wide">Все заказы</h2>
+</section>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+
+    <form action="/order">
+        <input name="query" id="query" size="50" th:value="${query}"/>
+        <input type="submit" value="Search"/>
+    </form>
+
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">Номер заказа</th>
+            <th scope="col">Предмет заказа</th>
+            <th scope="col">Стоимость заказа</th>
+            <th scope="col">Инициалы заказчика</th>
+            <th scope="col">Адрес доставки</th>
+            <th scope="col">Номер телефона</th>
+            <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order:${orders}">
+            <td th:text="${order.getId()}"></td>
+            <td th:text="${order.getBook().getTitle()}"></td>
+            <td th:text="${order.getBook().getPrice()}"></td>
+            <td th:text="${order.getInitials()}"></td>
+            <td th:text="${order.getAddress()}"></td>
+            <td th:text="${order.getPhone()}"></td>
+            <td><a th:href="@{/order/delete/{id}(id = ${order.getId()})}">Удалить</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <div th:if="${orders.getTotalPages() > 0 && orders.getTotalPages() != 1}" class="pagination"
+         th:each="pageNumber : ${pageNumbers}">
+        <a th:href="@{/order(size = ${orders.getSize()}, page = ${pageNumber})}"
+           th:text="${pageNumber}"></a>
+    </div>
+
+</section>
+
+<footer th:insert="fragments/footer :: footer"></footer>
+
+</body>
+
+</html>

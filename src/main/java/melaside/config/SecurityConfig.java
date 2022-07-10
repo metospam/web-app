@@ -15,9 +15,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Value("${upload.path}")
-    private String uploadPath;
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -26,21 +23,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
-                .antMatchers("/store/book/new").hasRole("ADMIN")
-                .antMatchers("/store/author/new").hasRole("ADMIN");
+                .antMatchers("/store/book/new").hasRole("ADMIN");
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-
-
-    //@Override
-    //public void addResourceHandlers(ResourceHandlerRegistry registry){
-    //   registry.addResourceHandler("*/img/**")
-    //          .addResourceLocations("file:///" + uploadPath + "/");
-    //}
 }
 

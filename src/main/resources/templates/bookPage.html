@@ -17,14 +17,25 @@
         </div>
         <h3 th:text="*{title}"></h3>
         <h4 th:text="*{description}"></h4>
+        <div><a class="w3-button" th:href="@{/login}">Оформить заказ</a></div>
         <h4>Жанр книги</h4>
         <p th:text="*{getGenre().getName()}"></p>
         <h4>Автор книги</h4>
         <p th:text="*{getAuthor().getInitials()}"></p>
         <h4>Цена книги</h4>
         <p th:text="*{getPrice() + 'р'}"></p>
-
+        <div>
+            <a th:href="@{/login}" class="w3-button">Добавить в избранное</a>
+        </div>
+        <div>
+            <p th:text="'Добавило в избранное' + ':' + ${book.getUsers().size()}"></p>
+        </div>
     </div>
+
+    <form action="/login">
+        <input name="text" required/>
+        <button type="submit">Добавить комментарий</button>
+    </form>
 
     <table th:if="${!#lists.isEmpty(comments)}">
         <thead>
@@ -41,10 +52,6 @@
         </tr>
         </tbody>
     </table>
-
-    <div>
-        <p th:text="${book.getUsers().size()}"></p>
-    </div>
 
     <div th:if="${comments.getTotalPages() > 0 && comments.getTotalPages() != 1}" class="pagination"
          th:each="pageNumber : ${pageNumbers}">

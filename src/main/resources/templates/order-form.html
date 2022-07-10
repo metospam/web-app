@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <title>melaside</title>
+</head>
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+
+    <h2 class="w3-wide">Оформление заказа</h2>
+    <div th:object="${book}">
+        <div th:if="${!#strings.isEmpty(book.getFileName())}">
+            <img height="300px" th:src="@{/img/{filename}(filename = ${book.getFileName()})}"/>
+        </div>
+        <h3 th:text="*{title}"></h3>
+        <h4>Цена:</h4>
+        <p th:text="*{getPrice() + 'р'}"></p>
+    </div>
+
+    <div class="forms">
+
+        <form method="post" th:object="${orderDto}">
+
+            <label for="initials">Укажите инициалы</label>
+            <div>
+                <input type="text" class="w3-border-black" id="initials" th:field="*{initials}">
+                <span th:if="${#fields.hasErrors('initials')}" th:errors="*{initials}">Not valid</span>
+            </div>
+
+            <label for="address">Укажите адрес</label>
+            <div>
+                <input type="text" class="w3-border-black" id=address th:field="*{address}">
+                <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Not Valid</span>
+            </div>
+
+            <label for="phone">Укажите номер телефона</label>
+            <div>
+                <input type="text" class="w3-border-black" id=phone th:field="*{phone}">
+                <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Not Valid</span>
+            </div>
+
+            <button type="submit" class="w3-button">Оформить заказ</button>
+        </form>
+    </div>
+
+</section>
+
+<footer th:insert="fragments/footer :: footer"></footer>
+
+</body>
+</html>

@@ -27,7 +27,6 @@ public class HomeController {
         model.addAttribute("secondBook", secondBook);
         model.addAttribute("thirdBook", thirdBook);
 
-
         return "home";
     }
 

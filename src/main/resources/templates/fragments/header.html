@@ -10,16 +10,20 @@
     <nav sec:authorize="${!isAuthenticated()}" class="w3-bar w3-black">
     <a href="/" class="w3-button w3-bar-item">Главная страница</a>
     <a href="/book" class="w3-button w3-bar-item">Каталог</a>
-    <a href="/404" class="w3-button w3-bar-item">Пользователи</a>
-    <a href="/404" class="w3-button w3-bar-item">Наша история</a>
-</nav>
+    </nav>
 
-    <nav sec:authorize="${isAuthenticated()}" class="w3-bar w3-black">
+    <nav sec:authorize="${isAuthenticated() && !hasRole('ADMIN')}" class="w3-bar w3-black">
         <a href="/" class="w3-button w3-bar-item">Главная страница</a>
         <a href="/book" class="w3-button w3-bar-item">Каталог</a>
-        <a href="/404" class="w3-button w3-bar-item">Пользователи</a>
-        <a href="/404" class="w3-button w3-bar-item">Наша история</a>
         <a th:href="@{/user/{id}(id=${#authentication.getPrincipal().id})}" class="w3-button w3-bar-item">Кабинет</a>
+        <a href="/order/my">Мои заказы</a>
+    </nav>
+
+    <nav sec:authorize="${isAuthenticated() && hasRole('ADMIN')}" class="w3-bar w3-black">
+        <a href="/" class="w3-button w3-bar-item">Главная страница</a>
+        <a href="/book" class="w3-button w3-bar-item">Каталог</a>
+        <a th:href="@{/user/{id}(id=${#authentication.getPrincipal().id})}" class="w3-button w3-bar-item">Кабинет</a>
+        <a href="/order/my" class="w3-button w3-bar-item">Заказы</a>
     </nav>
 </header>
 </body>

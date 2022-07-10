@@ -19,6 +19,7 @@
         <h3 th:text="*{title}"></h3>
         <h4>Описание книги</h4>
         <h4 th:text="*{description}"></h4>
+        <div><a class="w3-button" th:href="@{/order/{id}(id = ${book.id})}">Оформить заказ</a> </div>
         <h4>Жанр книги</h4>
         <p th:text="*{getGenre().getName()}"></p>
         <h4>Автор книги</h4>
@@ -26,6 +27,11 @@
         <h4>Цена книги</h4>
         <p th:text="*{getPrice() + 'р'}"></p>
     </div>
+
+    <div sec:authorize="${isAuthenticated() && hasRole('ADMIN')}">
+        <a th:href="@{/book/delete/{id}(id = ${book.getId()})}">Удалить книгу</a>
+    </div>
+
     <div sec:authorize="${isAuthenticated()}">
         <div th:if="${#lists.contains(books, book.getId())}">
         <a th:href="@{/book/unsubscribe/{id}(id=${book.getId()})}" class="w3-button">Убрать из избранного</a>
@@ -36,10 +42,9 @@
         </div>
     </div>
 
-    <div>
-        <p th:text="${book.getUsers().size()}"></p>
-    </div>
-
+        <div>
+            <p th:text="'Добавило в избранное' + ':' + ${book.getUsers().size()}"></p>
+        </div>
 
     <form method="post">
         <input name="text" th:value="${text}" required/>

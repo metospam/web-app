@@ -8,6 +8,7 @@ import melaside.model.dto.BookDto;
 import melaside.model.dto.OrderDto;
 import melaside.service.*;
 import lombok.RequiredArgsConstructor;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,7 +20,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.thymeleaf.model.IModel;
 
 import javax.validation.Valid;
 import java.io.File;
@@ -41,7 +41,6 @@ public class BookController {
     private final CommentService commentService;
     private final AuthorService authorService;
     private final GenreService genreService;
-    private final OrderService orderService;
 
     @Value("${upload.path}")
     private String uploadPath;
@@ -218,26 +217,4 @@ public class BookController {
 
         return "redirect:/book";
     }
-
-    @GetMapping("/order/{id}")
-    public String orderForm(OrderDto orderDto){
-        return "order-form";
-    }
-
-    @PostMapping("/order/{id}")
-    public String orderBook(@Valid OrderDto dto,
-                            @PathVariable("id") Long id,
-                            BindingResult bindingResult,
-                            @AuthenticationPrincipal MyUser myUser){
-        if(bindingResult.hasErrors()){
-            return "order-form";
-        } else {
-            User user = userService.findById(myUser.getId());
-            Book book = bookService.findById(id);
-
-            orderService.createOrder(dto, book, user);
-            return "redirect:/user/" + id;
-        }
-    }
-
 }

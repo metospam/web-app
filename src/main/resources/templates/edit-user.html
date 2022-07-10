@@ -16,7 +16,7 @@
     </div>
 
     <div>
-        <h4>Избранные книги</h4>
+        <h4>Избранное</h4>
     </div>
     <div th:each="book : ${books}">
         <a class="w3-button" th:text="${book.getTitle()}" th:href="@{/book/{id}(id=${book.getId()})}"></a>
